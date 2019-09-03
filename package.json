@@ -3,8 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.22",
+    "@fortawesome/free-solid-svg-icons": "^5.10.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-parallax": "^2.2.0",
+    "react-rellax": "^1.0.3",
+    "react-reveal": "^1.2.2",
+    "react-rotating-text": "^1.4.1",
     "react-scripts": "3.1.1"
   },
   "scripts": {
