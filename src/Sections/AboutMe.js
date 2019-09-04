@@ -70,7 +70,7 @@ export default class AboutMe extends React.Component {
                             <br/>
                             <div>
                                 <FontAwesomeIcon icon={faRobot} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span class="icon-text">Captain of <a href="http://750s.github.io">750S</a></span>
+                                <span class="icon-text">Captain of <a href="https://750s.github.io">750S</a></span>
                             </div>
                             <br/>
                             <div>
