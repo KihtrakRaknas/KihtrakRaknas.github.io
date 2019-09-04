@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.28e622f8.chunk.css",
+    "main.js": "/static/js/main.5fbb35df.chunk.js",
+    "main.js.map": "/static/js/main.5fbb35df.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.ff47fc3e.js",
+    "runtime~main.js.map": "/static/js/runtime~main.ff47fc3e.js.map",
+    "static/js/2.ab364cfc.chunk.js": "/static/js/2.ab364cfc.chunk.js",
+    "static/js/2.ab364cfc.chunk.js.map": "/static/js/2.ab364cfc.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ece6ff752cdcdc0dc4740e4373db0662.js": "/precache-manifest.ece6ff752cdcdc0dc4740e4373db0662.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.28e622f8.chunk.css.map": "/static/css/main.28e622f8.chunk.css.map",
+    "static/media/Karthik.JPG": "/static/media/Karthik.59770943.JPG",
+    "static/media/favicon.ico": "/static/media/favicon.291eccc8.ico",
+    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+  }
+}
