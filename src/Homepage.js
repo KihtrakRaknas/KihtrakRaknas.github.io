@@ -25,7 +25,7 @@ export default class Homepage extends React.Component {
                 <div class="container-fluid">
                     <div id="About-Me"><AboutMe/></div>
 
-                    
+                    <h6 class="display-3 text-center"><br/>THIS SITE IS STILL A WORK IN PROGRESS. </h6>
                     <div id="2" style={{height:"10000px"}}></div>
 
                     <div id="3" style={{height:"10000px"}}></div>
