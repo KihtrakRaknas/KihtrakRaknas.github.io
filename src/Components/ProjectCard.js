@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faJs, faReact, faNodeJs, faGoogle} from '@fortawesome/free-brands-svg-icons'
+import { faJs, faReact, faNodeJs, faGoogle, faHtml5, faCss3Alt} from '@fortawesome/free-brands-svg-icons'
 import { faFire} from '@fortawesome/free-solid-svg-icons'
 
 export default class ProjectCard extends React.Component {
@@ -73,6 +73,14 @@ export default class ProjectCard extends React.Component {
             icon = <FontAwesomeIcon icon={faFire}/>
             backgoundColor = "#FFCA28"
             color = "black"
+        }else if(name&&name.includes("HTML")){
+            icon = <FontAwesomeIcon icon={faHtml5}/>
+            backgoundColor = "#F16529"
+            color = "white"
+        }else if(name == "CSS"){
+            icon = <FontAwesomeIcon icon={faCss3Alt}/>
+            backgoundColor = "#264de4"
+            color = "white"
         }
         return(
             <span class="badge" style={{marginRight:"5px", backgroundColor:backgoundColor, color:color}}>{icon} {name}</span>
@@ -103,13 +111,13 @@ export default class ProjectCard extends React.Component {
                 tools.push(this.formatName(tool))
             }
         }
-        console.log(languages)
+        let imgSrc = this.props.img?this.props.img:this.props.project?`https://api.microlink.io?url=${encodeURIComponent(this.props.project)}&screenshot=true&embed=screenshot.url`:this.props.page?`https://api.microlink.io?url=${encodeURIComponent(this.props.page)}&screenshot=true&embed=screenshot.url`:null//"https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png"
         return(
             <div className="card">
-                <img className="card-img-top" src={this.props.img?this.props.img:this.props.project?`https://api.microlink.io?url=${encodeURIComponent(this.props.project)}&screenshot=true&embed=screenshot.url`:this.props.page?`https://api.microlink.io?url=${encodeURIComponent(this.props.page)}&screenshot=true&embed=screenshot.url`:"https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png"} alt="Card image"/>
+                {imgSrc?<img className="card-img-top" src={imgSrc} alt={`Image depicting ${this.props.title?this.props.title:this.state.title}`}/>:null}
                 <div class="card-body">
                     <h4 class="card-title">{this.props.title?this.props.title:this.state.title}</h4>
-                    {firstYear||firstMonth||lastYear||lastMonth?<h6 class="card-subtitle mb-2 text-muted">{firstMonth} {firstYear} - {lastMonth} {lastYear}</h6>:null}
+                    {firstYear||firstMonth||lastYear||lastMonth?firstYear==lastYear&&firstMonth==lastMonth?<h6 class="card-subtitle mb-2 text-muted">{firstMonth} {firstYear}</h6>:<h6 class="card-subtitle mb-2 text-muted">{firstMonth} {firstYear} - {lastMonth} {lastYear}</h6>:null}
                     <p class="card-text">{this.props.description?this.props.description:this.state.description}</p>
                     <div class="d-flex justify-content-around">
                         {this.props.project?<a href={this.props.project} class="btn btn-outline-success">Open Project</a>:null}

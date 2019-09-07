@@ -30,9 +30,31 @@ export default class Projects extends React.Component {
                         tools={["Firebase Cloud Firestore","Google Cloud Functions","Expo API"]} 
                         languages={["JavaScript","React"]}
                     />
-                    <ProjectCard title="This page will be populated soon"/>
-                    <ProjectCard title="This page will be populated soon"/>
-                    <ProjectCard title="This page will be populated soon"/>
+                    <ProjectCard
+                        title="REDirector"
+                        RepoName="RED" 
+                        project="http://red.kihtrak.com"
+                        tools={["Firebase Realtime Database"]} 
+                        languages={["JavaScript","HTML","CSS"]}
+                    />
+                    <ProjectCard
+                        title="Potato Co."
+                        RepoName="Potato-co" 
+                        project="https://potato.kihtrak.com/" 
+                        languages={["JavaScript","HTML","CSS"]}
+                    />
+                    <ProjectCard 
+                        title="This page will be populated soon"
+                    />
+                    <ProjectCard 
+                        title="This page will be populated soon"
+                    />
+                    <ProjectCard 
+                        title="This page will be populated soon"
+                    />
+                    <ProjectCard 
+                        title="This page will be populated soon"
+                    />
                     </div>
             </div>
         )
