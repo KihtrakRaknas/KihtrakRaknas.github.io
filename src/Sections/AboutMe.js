@@ -49,6 +49,7 @@ export default class AboutMe extends React.Component {
         return(
             <div>
                 <br/>
+                <br/>
                 <Bounce bottom>
                     <h1 className="text-center display-2">About Me</h1>
                 </Bounce>

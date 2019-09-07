@@ -3,6 +3,7 @@ import './Homepage.css';
 import favicon from './favicon.ico';
 import Top from './Sections/Top';
 import AboutMe from './Sections/AboutMe';
+import Projects from './Sections/Projects';
 
 export default class Homepage extends React.Component {
     render(){
@@ -10,7 +11,7 @@ export default class Homepage extends React.Component {
             <div>
                 <Top/>
                 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-                    <a class="navbar-brand" href="#"><img src={favicon} style={{height:"100%"}}></img><span>arthik</span></a>
+                    <a class="navbar-brand" href="#"><img src={favicon} style={{height:"100%"}} alt="3D K spinning"></img><span>arthik</span></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -24,9 +25,10 @@ export default class Homepage extends React.Component {
                 </nav>
                 <div class="container-fluid">
                     <div id="About-Me"><AboutMe/></div>
-
+                    
                     <h6 class="display-3 text-center"><br/>THIS SITE IS STILL A WORK IN PROGRESS. </h6>
-                    <div id="2" style={{height:"10000px"}}></div>
+
+                    <div id="2" style={{height:"10000px"}}><Projects/></div>
 
                     <div id="3" style={{height:"10000px"}}></div>
                 </div>

@@ -1,6 +1,6 @@
 .center-vert{
     position: relative;
-    top: 50%;
+    top: 70%;
     transform: translateY(-50%);
     text-align: center;
 }
