@@ -33,6 +33,10 @@ export default class ProjectCard extends React.Component {
                     this.setState({
                         firstMonth: new Date(json.created_at).toLocaleString('default', { month: 'long' }),
                         firstYear: new Date(json.created_at).getFullYear(),
+                        description: json.description,
+                        title: json.name,
+                        code: json.svn_url,
+                        language: json.language,
                     });
                 });
             })
@@ -50,15 +54,15 @@ export default class ProjectCard extends React.Component {
         let lastMonth = this.props.lastMonth?this.props.lastMonth:this.state.lastMonth?this.state.lastMonth:null
         return(
             <div className="card">
-                <img className="card-img-top" src={this.props.img?this.props.img:"https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png"} alt="Card image"/>
+                <img className="card-img-top" src={this.props.img?this.props.img:this.props.project?`https://api.microlink.io?url=${encodeURIComponent(this.props.project)}&screenshot=true&embed=screenshot.url`:this.props.page?`https://api.microlink.io?url=${encodeURIComponent(this.props.page)}&screenshot=true&embed=screenshot.url`:"https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png"} alt="Card image"/>
                 <div class="card-body">
-                    <h4 class="card-title">{this.props.title}</h4>
+                    <h4 class="card-title">{this.props.title?this.props.title:this.state.title}</h4>
                     {firstYear||firstMonth||lastYear||lastMonth?<h6 class="card-subtitle mb-2 text-muted">{firstMonth} {firstYear} - {lastMonth} {lastYear}</h6>:null}
-                    <p class="card-text">{this.props.description}</p>
+                    <p class="card-text">{this.props.description?this.props.description:this.state.description}</p>
                     <div class="d-flex justify-content-around">
                         {this.props.project?<a href={this.props.project} class="btn btn-outline-success">Open Project</a>:null}
                         {this.props.page?<a href={this.props.page} class="btn btn-outline-primary">View Project Page</a>:null}
-                        {this.props.code?<a href={this.props.code} class="btn btn-outline-secondary">View Code</a>:null}
+                        {this.props.code||this.state.code?<a href={this.props.code?this.props.code:this.state.code} class="btn btn-outline-secondary">View Code</a>:null}
                     </div>
                 </div>
             </div>

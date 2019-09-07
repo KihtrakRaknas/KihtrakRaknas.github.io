@@ -18,8 +18,8 @@ export default class Projects extends React.Component {
                         RepoName="KihtrakRaknas.github.io"
                         GithubBranch="Source"
                     />
-                    <ProjectCard title="This page will be populated soon"/>
-                    <ProjectCard title="This page will be populated soon"/>
+                    <ProjectCard title="GradeView Server Side Code" RepoName="GradeView"/>
+                    <ProjectCard RepoName="GradeViewApp" project="https://gradeview.kihtrak.com/" tools={["Firebase Cloud Firestore","Google Cloud Functions","Expo API"]} languages={["Javascript","node.js"]}/>
                     <ProjectCard title="This page will be populated soon"/>
                     <ProjectCard title="This page will be populated soon"/>
                     <ProjectCard title="This page will be populated soon"/>
