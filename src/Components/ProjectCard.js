@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faJs, faReact, faNodeJs, faGoogle} from '@fortawesome/free-brands-svg-icons'
+import { faFire} from '@fortawesome/free-solid-svg-icons'
 
 export default class ProjectCard extends React.Component {
     constructor(props){
@@ -46,12 +49,61 @@ export default class ProjectCard extends React.Component {
         }
     }
 
+    formatName = (name) =>{
+        let icon = null;
+        let backgoundColor = "black";
+        let color = "white"
+        if(name == "JavaScript"){
+            icon = <FontAwesomeIcon icon={faJs}/>
+            backgoundColor = "#f0db4f"
+            color = "black"
+        }else if(name == "React"){
+            icon = <FontAwesomeIcon icon={faReact}/>
+            backgoundColor = "#61dbfb"
+            color = "black"
+        }else if(name == "Node.js"){
+            icon = <FontAwesomeIcon icon={faNodeJs}/>
+            backgoundColor = "#68A063"
+            color = "white"
+        }else if(name&&name.includes("Google")){
+            icon = <FontAwesomeIcon icon={faGoogle}/>
+            backgoundColor = "#4285F4"
+            color = "white"
+        }else if(name&&name.includes("Firebase")){
+            icon = <FontAwesomeIcon icon={faFire}/>
+            backgoundColor = "#FFCA28"
+            color = "black"
+        }
+        return(
+            <span class="badge" style={{marginRight:"5px", backgroundColor:backgoundColor, color:color}}>{icon} {name}</span>
+        )
+    }
+
     render(){
         console.log(this.state);
         let firstYear = this.props.firstYear?this.props.firstYear:this.state.firstYear?this.state.firstYear:null
         let firstMonth = this.props.firstMonth?this.props.firstMonth:this.state.firstMonth?this.state.firstMonth:null
         let lastYear = this.props.lastYear?this.props.lastYear:this.state.lastYear?this.state.lastYear:null
         let lastMonth = this.props.lastMonth?this.props.lastMonth:this.state.lastMonth?this.state.lastMonth:null
+        let languages = []
+
+        console.log(this.props.languages)
+        if(this.props.languages){
+            if(this.state.language&&!this.props.languages.includes(this.state.language))
+                this.props.languages.push(this.state.language)
+            for(let lang of this.props.languages){
+                languages.push(this.formatName(lang))
+            }
+        }else if(this.state.language){
+            languages.push(this.formatName(this.state.language))
+        }
+        let tools = []
+        if(this.props.tools){
+            for(let tool of this.props.tools){
+                tools.push(this.formatName(tool))
+            }
+        }
+        console.log(languages)
         return(
             <div className="card">
                 <img className="card-img-top" src={this.props.img?this.props.img:this.props.project?`https://api.microlink.io?url=${encodeURIComponent(this.props.project)}&screenshot=true&embed=screenshot.url`:this.props.page?`https://api.microlink.io?url=${encodeURIComponent(this.props.page)}&screenshot=true&embed=screenshot.url`:"https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png"} alt="Card image"/>
@@ -65,6 +117,7 @@ export default class ProjectCard extends React.Component {
                         {this.props.code||this.state.code?<a href={this.props.code?this.props.code:this.state.code} class="btn btn-outline-secondary">View Code</a>:null}
                     </div>
                 </div>
+                {languages.length>0||tools.length>0?<div class="card-footer">{languages}<br/>{tools}</div>:null}
             </div>
         )
         
