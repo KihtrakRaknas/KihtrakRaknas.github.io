@@ -17,7 +17,6 @@ export default class ProjectCard extends React.Component {
             )
             .then(response => {
                 response.json().then(json => {
-                    console.log(json);
                     this.setState({
                         lastMonth: new Date(json.commit.commit.author.date).toLocaleString('default', { month: 'long' }),
                         lastYear: new Date(json.commit.commit.author.date).getFullYear(),
@@ -32,7 +31,6 @@ export default class ProjectCard extends React.Component {
             )
             .then(response => {
                 response.json().then(json => {
-                    console.log(json);
                     this.setState({
                         firstMonth: new Date(json.created_at).toLocaleString('default', { month: 'long' }),
                         firstYear: new Date(json.created_at).getFullYear(),
@@ -88,14 +86,11 @@ export default class ProjectCard extends React.Component {
     }
 
     render(){
-        console.log(this.state);
         let firstYear = this.props.firstYear?this.props.firstYear:this.state.firstYear?this.state.firstYear:null
         let firstMonth = this.props.firstMonth?this.props.firstMonth:this.state.firstMonth?this.state.firstMonth:null
         let lastYear = this.props.lastYear?this.props.lastYear:this.state.lastYear?this.state.lastYear:null
         let lastMonth = this.props.lastMonth?this.props.lastMonth:this.state.lastMonth?this.state.lastMonth:null
         let languages = []
-
-        console.log(this.props.languages)
         if(this.props.languages){
             if(this.state.language&&!this.props.languages.includes(this.state.language))
                 this.props.languages.push(this.state.language)
@@ -112,6 +107,7 @@ export default class ProjectCard extends React.Component {
             }
         }
         let imgSrc = this.props.img?this.props.img:this.props.project?`https://api.microlink.io?url=${encodeURIComponent(this.props.project)}&screenshot=true&embed=screenshot.url`:this.props.page?`https://api.microlink.io?url=${encodeURIComponent(this.props.page)}&screenshot=true&embed=screenshot.url`:null//"https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png"
+        let btnSize = !!this.props.project&&!!this.props.page&&(this.props.code||this.state.code)&&window.innerWidth<420?"btn-sm":""
         return(
             <div className="card">
                 {imgSrc?<img className="card-img-top" src={imgSrc} alt={`Image depicting ${this.props.title?this.props.title:this.state.title}`}/>:null}
@@ -120,9 +116,9 @@ export default class ProjectCard extends React.Component {
                     {firstYear||firstMonth||lastYear||lastMonth?firstYear==lastYear&&firstMonth==lastMonth?<h6 class="card-subtitle mb-2 text-muted">{firstMonth} {firstYear}</h6>:<h6 class="card-subtitle mb-2 text-muted">{firstMonth} {firstYear} - {lastMonth} {lastYear}</h6>:null}
                     <p class="card-text">{this.props.description?this.props.description:this.state.description}</p>
                     <div class="d-flex justify-content-around">
-                        {this.props.project?<a href={this.props.project} class="btn btn-outline-success">Open Project</a>:null}
-                        {this.props.page?<a href={this.props.page} class="btn btn-outline-primary">View Project Page</a>:null}
-                        {this.props.code||this.state.code?<a href={this.props.code?this.props.code:this.state.code} class="btn btn-outline-secondary">View Code</a>:null}
+                        {this.props.project?<a href={this.props.project} class={`btn btn-outline-success ${btnSize}`}>Open Project</a>:null}
+                        {this.props.page?<a href={this.props.page} class={`btn btn-outline-primary ${btnSize}`}>View Project Page</a>:null}
+                        {this.props.code||this.state.code?<a href={this.props.code?this.props.code:this.state.code} class={`btn btn-outline-secondary ${btnSize}`}>View Code</a>:null}
                     </div>
                 </div>
                 {languages.length>0||tools.length>0?<div class="card-footer">{languages}<br/>{tools}</div>:null}

@@ -17,6 +17,7 @@ export default class Projects extends React.Component {
                         code="https://github.com/KihtrakRaknas/KihtrakRaknas.github.io"
                         RepoName="KihtrakRaknas.github.io"
                         GithubBranch="Source"
+                        languages={["JavaScript","React"]}
                     />
                     <ProjectCard 
                         title="GradeView Server Side Code" 
@@ -26,7 +27,8 @@ export default class Projects extends React.Component {
                     <ProjectCard 
                         title="GradeView - iOS and Andriod App"
                         RepoName="GradeViewApp" 
-                        project="https://gradeview.kihtrak.com/" 
+                        project="https://gradeview.kihtrak.com/app.html"
+                        page="https://gradeview.kihtrak.com/" 
                         tools={["Firebase Cloud Firestore","Google Cloud Functions","Expo API"]} 
                         languages={["JavaScript","React"]}
                     />
@@ -44,7 +46,14 @@ export default class Projects extends React.Component {
                         languages={["JavaScript","HTML","CSS"]}
                     />
                     <ProjectCard 
-                        title="This page will be populated soon"
+                        title="Old Homepage"
+                        RepoName="Old-Homepage"
+                        firstMonth="November"
+                        lastMonth="November"
+                        firstYear="2017"
+                        lastYear="2017"
+                        project="http://old.kihtrak.com"
+                        languages={["JavaScript","HTML","CSS"]}
                     />
                     <ProjectCard 
                         title="This page will be populated soon"
