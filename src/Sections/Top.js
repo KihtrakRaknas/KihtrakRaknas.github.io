@@ -13,7 +13,7 @@ export default class Top extends React.Component {
                 strength={-300}
             >
                 <div style={{ height: '100vh' }} >
-                    <Parallax centered={true} class="center-vert" speed={10} style={{fontSize:"10vh",color:"black", fontWeight: "bold"}}><ReactRotatingText items={['Karthik Sankar', 'Kihtrak Raknas']} /></Parallax>
+                    <Parallax centered={true} className="center-vert" speed={10} style={{fontSize:"10vh",color:"black", fontWeight: "bold"}}><ReactRotatingText items={['Karthik Sankar', 'Kihtrak Raknas']} /></Parallax>
                 </div>
             </ImgPara>
         );
