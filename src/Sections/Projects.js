@@ -8,11 +8,42 @@ export default class Projects extends React.Component {
         super(props);
         this.masonry = React.createRef();
         //this.masonry.current.updateFilter()
+        this.state = {
+            reverseSort:false
+        }
       }
     render(){
         return (
             <div>
                 <h1 className="text-center display-2">Projects</h1>
+                <br/>
+                <div class="form-row justify-content-between">
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary active" onClick={()=>{this.masonry.current.setSort("original-order",this.state.reverseSort)}}>
+                            <input type="radio" name="options" id="option1" autocomplete="off" checked/> Default
+                        </label>
+                        <label class="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("start",this.state.reverseSort)}}>
+                            <input type="radio" name="options" id="option2" autocomplete="off"/> Date Created
+                        </label>
+                        <label class="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("end",this.state.reverseSort)}}>
+                            <input type="radio" name="options" id="option3" autocomplete="off"/> Date Finished
+                        </label>
+                    </div>
+                    <div>
+                        <select class="btn btn-mini">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <span class="caret"></span>
+                        <select class="btn btn-mini">
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <span class="caret"></span>
+                    </div>
+                </div>
                 <br/>
                 <MasonryCardDisplay ref={this.masonry}>
                 <ProjectCard 
