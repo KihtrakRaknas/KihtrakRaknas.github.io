@@ -45,7 +45,6 @@ export default class AboutMe extends React.Component {
     }
 
     render(){
-        console.log(this.state.vmin)
         return(
             <div>
                 <br/>

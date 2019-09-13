@@ -96,6 +96,13 @@ export default class ProjectCard extends React.Component {
     }
 
     componentDidUpdate = () =>{
+        let tags = this.props.languages
+        if(tags&&tags.length>0){
+            tags = tags.concat(this.props.tools)
+        }else{
+            tags = this.props.tools
+        }
+        this.props.updateTags(tags)
         if(this.props.update)
             this.props.update()
     }

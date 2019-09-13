@@ -23,6 +23,7 @@ export default class MasonryCardDisplay extends React.Component {
                         <ProjectCard
                             {...other}
                             update = {this.componentDidUpdate.bind(this)}
+                            updateTags = {this.props.updateTags}
                             width = {this.state.width}
                             key= {childa.props.title}
                         />
@@ -31,6 +32,7 @@ export default class MasonryCardDisplay extends React.Component {
             </div>
         )
     }
+
     updateDimensions = () =>{
         const node = ReactDOM.findDOMNode(this);
         this.setState({width:node.offsetWidth})
@@ -41,7 +43,6 @@ export default class MasonryCardDisplay extends React.Component {
         if(!this.state.width)
             this.updateDimensions()
         window.addEventListener("resize", this.updateDimensions);
-        console.log(node)
         if (!this.state.isotope) {
             this.setState({
                 isotope: new Isotope( node, {
@@ -73,7 +74,6 @@ export default class MasonryCardDisplay extends React.Component {
     setSort = (key, switchSort) =>{
         globalSortKey = [key,'original-order'];
         globalSortAscending = switchSort;
-        console.log(this.state.isotope)
         this.state.isotope.arrange({ 
             sortBy: globalSortKey,
             sortAscending: {
@@ -88,9 +88,6 @@ export default class MasonryCardDisplay extends React.Component {
     updateFilter = (keys) =>{
         globalKeys = keys;
         this.state.isotope.arrange({ filter: function(){
-            console.log(this)//Returns element
-            //console.log(this.keys)//Doesn't work
-            console.log(globalKeys)//Doesn't work
             if(globalKeys)
                 for(let key of globalKeys)
                     if(!JSON.parse(this.dataset.filter).includes(key))

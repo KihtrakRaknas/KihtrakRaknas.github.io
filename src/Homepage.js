@@ -18,19 +18,16 @@ export default class Homepage extends React.Component {
                     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                         <div class="navbar-nav ml-auto">
                         <a class="nav-item nav-link" href="#About-Me">About Me</a>
-                        <a class="nav-item nav-link" href="#2">Projects</a>
+                        <a class="nav-item nav-link" href="#Projects">Projects</a>
                         <a class="nav-item nav-link" href="#3">Around the Web</a>
                         </div>
                     </div>
                 </nav>
                 <div class="container-fluid">
                     <div id="About-Me"><AboutMe/></div>
-                    
+                    <br/><br/><br/>
+                    <div id="Projects"><Projects/></div>
                     <h6 class="display-3 text-center"><br/>THIS SITE IS STILL A WORK IN PROGRESS. </h6>
-
-                    <div id="2" style={{height:"10000px"}}><Projects/></div>
-
-                    <div id="3" style={{height:"10000px"}}></div>
                 </div>
             </div>
         );

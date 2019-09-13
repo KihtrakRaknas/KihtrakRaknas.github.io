@@ -2,6 +2,7 @@ import React from 'react';
 import ProjectCard from '../Components/ProjectCard'
 import './Projects.css';
 import MasonryCardDisplay from '../Components/MasonryCardDisplay';
+import Select from 'react-select';
 
 export default class Projects extends React.Component {
     constructor(props) {
@@ -9,43 +10,82 @@ export default class Projects extends React.Component {
         this.masonry = React.createRef();
         //this.masonry.current.updateFilter()
         this.state = {
-            reverseSort:false
+            reverseSort:false,
+            showMobileBtns:false,
+            tags:[]
         }
       }
+
+      sortBtns = ()=>{
+            return(                        
+            <div class="btn-group btn-group-toggle mt-2" data-toggle="buttons">
+                <label class="btn btn-secondary active" onClick={()=>{this.masonry.current.setSort("original-order",this.state.reverseSort)}}>
+                    <input type="radio" name="options" id="option1" autocomplete="off" checked/> Default
+                </label>
+                <label class="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("start",this.state.reverseSort)}}>
+                    <input type="radio" name="options" id="option2" autocomplete="off"/> Date Created
+                </label>
+                <label class="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("end",this.state.reverseSort)}}>
+                    <input type="radio" name="options" id="option3" autocomplete="off"/> Date Finished
+                </label>
+            </div>
+            )
+      }
+      filterDropDowns = ()=>{
+        let searchOptions = [];
+        for(let tag of this.state.tags)
+            searchOptions.push({value:tag,label:tag});
+        console.log(searchOptions)
+        return(
+            <div>
+                <Select className="mt-2" options={searchOptions} placeholder="Filter by tags" onChange={this.filterSelected} isMulti={true}/>
+            </div>
+        )
+      }
+
+      filterSelected = (selctions) => {
+        if(selctions)
+            this.masonry.current.updateFilter(JSON.parse(JSON.stringify(selctions)).map((item)=>{return item.label}))
+        else   
+            this.masonry.current.updateFilter([]);
+      }
+
+    updateTags = (tags) =>{
+        let newTags = []
+        if(tags)
+            for(let tag of tags)
+                if(tag&&this.state.tags.indexOf(tag) === -1)
+                    newTags.push(tag)
+        if(newTags.length>0)
+            this.setState({
+                tags: this.state.tags.concat(newTags),
+            });
+    }
+
     render(){
         return (
             <div>
                 <h1 className="text-center display-2">Projects</h1>
                 <br/>
-                <div class="form-row justify-content-between">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary active" onClick={()=>{this.masonry.current.setSort("original-order",this.state.reverseSort)}}>
-                            <input type="radio" name="options" id="option1" autocomplete="off" checked/> Default
-                        </label>
-                        <label class="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("start",this.state.reverseSort)}}>
-                            <input type="radio" name="options" id="option2" autocomplete="off"/> Date Created
-                        </label>
-                        <label class="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("end",this.state.reverseSort)}}>
-                            <input type="radio" name="options" id="option3" autocomplete="off"/> Date Finished
-                        </label>
+                <div class="d-none d-md-block">
+                    <div class="form-row">
+                        <div class="col-6">
+                            {this.sortBtns()}
+                        </div>
+                        <div class="col-6">
+                            {this.filterDropDowns()}
+                        </div>
                     </div>
-                    <div>
-                        <select class="btn btn-mini">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                        <span class="caret"></span>
-                        <select class="btn btn-mini">
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
-                        <span class="caret"></span>
+                </div>
+                <div class="d-md-none text-center">
+                    <button type="button" class="btn btn-outline-info" style={{display:this.state.showMobileBtns?"none":"inline-block"}} onClick={()=>this.setState({showMobileBtns:true})}>Sort/Filter</button>
+                    <div style={{display:this.state.showMobileBtns?"block":"none"}}>
+                        {this.filterDropDowns()}
+                        {this.sortBtns()}
                     </div>
                 </div>
                 <br/>
-                <MasonryCardDisplay ref={this.masonry}>
+                <MasonryCardDisplay ref={this.masonry} updateTags={this.updateTags.bind(this)}>
                 <ProjectCard 
                         title="Kihtrak.com" 
                         img={require('../Imgs/Karthik.JPG')} 
