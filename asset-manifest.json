@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.d13d13e4.chunk.css",
-    "main.js": "/static/js/main.42c970b8.chunk.js",
-    "main.js.map": "/static/js/main.42c970b8.chunk.js.map",
+    "main.js": "/static/js/main.ec6f027f.chunk.js",
+    "main.js.map": "/static/js/main.ec6f027f.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.ff47fc3e.js",
     "runtime~main.js.map": "/static/js/runtime~main.ff47fc3e.js.map",
     "static/js/2.791813a4.chunk.js": "/static/js/2.791813a4.chunk.js",
     "static/js/2.791813a4.chunk.js.map": "/static/js/2.791813a4.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.9be018965f90866bfde90fe6a9d6f956.js": "/precache-manifest.9be018965f90866bfde90fe6a9d6f956.js",
+    "precache-manifest.d57a6bc74e5dd32872cd4ad13e845eba.js": "/precache-manifest.d57a6bc74e5dd32872cd4ad13e845eba.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.d13d13e4.chunk.css.map": "/static/css/main.d13d13e4.chunk.css.map",
-    "static/media/Karthik.JPG": "/static/media/Karthik.59770943.JPG",
+    "static/media/Karthik.JPG": "/static/media/Karthik.5bd405d1.JPG",
     "static/media/favicon.ico": "/static/media/favicon.291eccc8.ico",
     "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
   }
