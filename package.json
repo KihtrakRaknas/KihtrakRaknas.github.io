@@ -11,6 +11,7 @@
     "isotope-layout": "^3.0.6",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-google-recaptcha": "^2.0.0-rc.1",
     "react-parallax": "^2.2.0",
     "react-rellax": "^1.0.3",
     "react-reveal": "^1.2.2",

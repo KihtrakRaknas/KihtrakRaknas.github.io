@@ -80,8 +80,8 @@ export default class Projects extends React.Component {
                 <div class="d-md-none text-center">
                     <button type="button" class="btn btn-outline-info" style={{display:this.state.showMobileBtns?"none":"inline-block"}} onClick={()=>this.setState({showMobileBtns:true})}>Sort/Filter</button>
                     <div style={{display:this.state.showMobileBtns?"block":"none"}}>
-                        {this.filterDropDowns()}
                         {this.sortBtns()}
+                        {this.filterDropDowns()}   
                     </div>
                 </div>
                 <br/>
@@ -134,7 +134,7 @@ export default class Projects extends React.Component {
                         languages={["JavaScript","HTML","CSS"]}
                     />
                     <ProjectCard 
-                        title="This page will be populated soon"
+                        RepoName="setup"
                     />
                     <ProjectCard 
                         title="This page will be populated soon"

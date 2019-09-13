@@ -4,6 +4,7 @@ import favicon from './favicon.ico';
 import Top from './Sections/Top';
 import AboutMe from './Sections/AboutMe';
 import Projects from './Sections/Projects';
+import AroundTheWeb from './Sections/AroundTheWeb';
 
 export default class Homepage extends React.Component {
     render(){
@@ -19,15 +20,20 @@ export default class Homepage extends React.Component {
                         <div class="navbar-nav ml-auto">
                         <a class="nav-item nav-link" href="#About-Me">About Me</a>
                         <a class="nav-item nav-link" href="#Projects">Projects</a>
-                        <a class="nav-item nav-link" href="#3">Around the Web</a>
+                        <a class="nav-item nav-link" href="#Around-The-Web">Around the Web</a>
                         </div>
                     </div>
                 </nav>
                 <div class="container-fluid">
+                    <h1 class="display-1 text-center">Karthik Sankar</h1>
+                    <br/>
+                    <br/>
                     <div id="About-Me"><AboutMe/></div>
                     <br/><br/><br/>
                     <div id="Projects"><Projects/></div>
-                    <h6 class="display-3 text-center"><br/>THIS SITE IS STILL A WORK IN PROGRESS. </h6>
+                    <br/><br/><br/>
+                    <div id="Around-The-Web"><AroundTheWeb/></div>
+                    <br/><br/><br/>
                 </div>
             </div>
         );
