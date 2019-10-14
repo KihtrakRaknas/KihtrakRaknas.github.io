@@ -72,4 +72,13 @@ export const Projects = [
         firstYear="2018"
         lastYear="2018"
     />,
+    <ProjectCard
+        title="3D Shooter"
+        RepoName="3d-shooter"
+    />
+    <ProjectCard
+        title="750S Team Website"
+        //RepoName="3d-shooter"
+        project="https://750s.github.io"
+    />       
 ];
