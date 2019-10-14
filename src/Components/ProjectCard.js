@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faJs, faReact, faNodeJs, faGoogle, faHtml5, faCss3Alt} from '@fortawesome/free-brands-svg-icons'
-import { faFire} from '@fortawesome/free-solid-svg-icons'
+import { faJs, faReact, faNodeJs, faGoogle, faHtml5, faCss3Alt, faJava, faAndroid, faAppStore, faAppStoreIos, faGooglePlay} from '@fortawesome/free-brands-svg-icons'
+import { faFire, faGlobe, faServer} from '@fortawesome/free-solid-svg-icons'
 
 export default class ProjectCard extends React.Component {
     constructor(props){
@@ -89,6 +89,26 @@ export default class ProjectCard extends React.Component {
             icon = <FontAwesomeIcon icon={faCss3Alt}/>
             backgoundColor = "#264de4"
             color = "white"
+        }else if(name == "Java"){
+            icon = <FontAwesomeIcon icon={faJava}/>
+            backgoundColor = "#f89820"
+            color = "black"//
+        }else if(name == "Website"){
+            icon = <FontAwesomeIcon icon={faGlobe}/>
+        }else if(name == "Server"){
+            icon = <FontAwesomeIcon icon={faServer}/>
+        }else if(name=="Andriod App"){
+            icon = <FontAwesomeIcon icon={faGooglePlay}/>
+            backgoundColor="#3BCCFF"
+            color="white"
+        }else if(name&&name.includes("Andriod")){
+            icon = <FontAwesomeIcon icon={faAndroid}/>
+            backgoundColor="#a4c639"
+            color="black"
+        }else if(name == "iOS App"){
+            icon = <FontAwesomeIcon icon={faAppStore}/>
+            backgoundColor = "#007AFF"
+            color="white"
         }
         return(
             <span class="badge" style={{marginRight:"5px", backgroundColor:backgoundColor, color:color}}>{icon} {name}</span>
@@ -155,6 +175,13 @@ export default class ProjectCard extends React.Component {
                 filterTerms.push(tool)
             }
         }
+        let types = []
+        if(this.props.types){
+            for(let type of this.props.types){
+                types.push(this.formatName(type))
+                filterTerms.push(type)
+            }
+        }
         let imgSrc = this.props.img?this.props.img:this.props.project?`https://api.microlink.io?url=${encodeURIComponent(this.props.project)}&screenshot=true&embed=screenshot.url`:this.props.page?`https://api.microlink.io?url=${encodeURIComponent(this.props.page)}&screenshot=true&embed=screenshot.url`:null//"https://codyhouse.co/demo/squeezebox-portfolio-template/img/img.png"
         let btnSize = !!this.props.project&&!!this.props.page&&(this.props.code||this.state.code)&&window.innerWidth<420?"btn-sm":""
         return(
@@ -170,7 +197,7 @@ export default class ProjectCard extends React.Component {
                         {this.props.code||this.state.code?<a href={this.props.code?this.props.code:this.state.code} class={`btn btn-outline-secondary ${btnSize}`}>View Code</a>:null}
                     </div>
                 </div>
-                {languages.length>0||tools.length>0?<div class="card-footer">{languages}<br/>{tools}</div>:null}
+                {languages.length>0||tools.length>0||types.length>0?<div class="card-footer">{languages}{languages.length>0?<br/>:null}{tools}{tools.length>0?<br/>:null}{types}</div>:null}
             </div>
         )
         

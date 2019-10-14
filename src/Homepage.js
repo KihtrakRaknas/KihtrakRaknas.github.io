@@ -3,7 +3,7 @@ import './Homepage.css';
 import favicon from './favicon.ico';
 import Top from './Sections/Top';
 import AboutMe from './Sections/AboutMe';
-import Projects from './Sections/Projects';
+import Projects from './Sections/ProjectsPage';
 import AroundTheWeb from './Sections/AroundTheWeb';
 
 export default class Homepage extends React.Component {
