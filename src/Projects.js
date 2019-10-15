@@ -75,14 +75,14 @@ export const Projects = [
     <ProjectCard
         title="3D Shooter"
         RepoName="3d-shooter"
-    />
+    />,
     <ProjectCard
         title="750S Team Website"
         //RepoName="3d-shooter"
         project="https://750s.github.io"
     />,
     <ProjectCard
-    title="3D-Maze"
-    RepoName="3D-Maze"
-/>     
+        title="3D-Maze"
+        RepoName="3D-Maze"
+    />   
 ];
