@@ -80,5 +80,9 @@ export const Projects = [
         title="750S Team Website"
         //RepoName="3d-shooter"
         project="https://750s.github.io"
-    />       
+    />,
+    <ProjectCard
+    title="3D-Maze"
+    RepoName="3D-Maze"
+/>     
 ];
