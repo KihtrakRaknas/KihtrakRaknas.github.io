@@ -74,6 +74,7 @@ export const Projects = [
     />,
     <ProjectCard
         title="3D Shooter"
+        project="https://kihtrak.com/3d-shooter"
         RepoName="3d-shooter"
     />,
     <ProjectCard
@@ -84,5 +85,7 @@ export const Projects = [
     <ProjectCard
         title="3D-Maze"
         RepoName="3D-Maze"
+        project="https://github.com/KihtrakRaknas/3D-Maze/archive/master.zip"
+        languages={["Java"]}
     />   
 ];
