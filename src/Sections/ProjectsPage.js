@@ -19,15 +19,15 @@ export default class ProjectsPage extends React.Component {
 
       sortBtns = ()=>{
             return(                        
-            <div class="btn-group btn-group-toggle mt-2" data-toggle="buttons">
-                <label class="btn btn-secondary active" onClick={()=>{this.masonry.current.setSort("original-order",this.state.reverseSort)}}>
-                    <input type="radio" name="options" id="option1" autocomplete="off" checked/> Default
+            <div className="btn-group btn-group-toggle mt-2" data-toggle="buttons">
+                <label className="btn btn-secondary active" onClick={()=>{this.masonry.current.setSort("original-order",this.state.reverseSort)}}>
+                    <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked/> Default
                 </label>
-                <label class="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("start",this.state.reverseSort)}}>
-                    <input type="radio" name="options" id="option2" autocomplete="off"/> Date Created
+                <label className="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("start",this.state.reverseSort)}}>
+                    <input type="radio" name="options" id="option2" autoComplete="off"/> Date Created
                 </label>
-                <label class="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("end",this.state.reverseSort)}}>
-                    <input type="radio" name="options" id="option3" autocomplete="off"/> Date Finished
+                <label className="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("end",this.state.reverseSort)}}>
+                    <input type="radio" name="options" id="option3" autoComplete="off"/> Date Finished
                 </label>
             </div>
             )
@@ -36,7 +36,7 @@ export default class ProjectsPage extends React.Component {
         let searchOptions = [];
         for(let tag of this.state.tags)
             searchOptions.push({value:tag,label:tag});
-        console.log(searchOptions)
+        //console.log(searchOptions)
         return(
             <div>
                 <Select className="mt-2" options={searchOptions} placeholder="Filter by tags" onChange={this.filterSelected} isMulti={true}/>
@@ -68,18 +68,18 @@ export default class ProjectsPage extends React.Component {
             <div>
                 <h1 className="text-center display-2">Projects</h1>
                 <br/>
-                <div class="d-none d-md-block">
-                    <div class="form-row">
-                        <div class="col-6">
+                <div className="d-none d-md-block">
+                    <div className="form-row">
+                        <div className="col-6">
                             {this.sortBtns()}
                         </div>
-                        <div class="col-6">
+                        <div className="col-6">
                             {this.filterDropDowns()}
                         </div>
                     </div>
                 </div>
-                <div class="d-md-none text-center">
-                    <button type="button" class="btn btn-outline-info" style={{display:this.state.showMobileBtns?"none":"inline-block"}} onClick={()=>this.setState({showMobileBtns:true})}>Sort/Filter</button>
+                <div className="d-md-none text-center">
+                    <button type="button" className="btn btn-outline-info" style={{display:this.state.showMobileBtns?"none":"inline-block"}} onClick={()=>this.setState({showMobileBtns:true})}>Sort/Filter</button>
                     <div style={{display:this.state.showMobileBtns?"block":"none"}}>
                         {this.sortBtns()}
                         {this.filterDropDowns()}   
@@ -95,7 +95,7 @@ export default class ProjectsPage extends React.Component {
 }
 
 /*
-                <div class="card-columns">
+                <div className="card-columns">
                     <ProjectCard 
                         title="Kihtrak.com" 
                         img={require('../Imgs/Karthik.JPG')} 

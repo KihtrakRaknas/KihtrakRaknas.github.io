@@ -55,32 +55,32 @@ export default class AboutMe extends React.Component {
                 <Jump>
                     
                 </Jump>
-                <div class="row">
-                    <div class="col-md-6 text-center">
+                <div className="row">
+                    <div className="col-md-6 text-center">
                         <Zoom left>
                             <div>
                                 <FontAwesomeIcon icon={faSearchLocation} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span class="icon-text">New Jersery</span>
+                                <span className="icon-text">New Jersery</span>
                             </div>
                             <br/>
                             <div>
                                 <FontAwesomeIcon icon={faSchool} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span class="icon-text">South Brunswick High School</span>
+                                <span className="icon-text">South Brunswick High School</span>
                             </div>
                             <br/>
                             <div>
                                 <FontAwesomeIcon icon={faRobot} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span class="icon-text">Captain of <a href="http://750s.github.io">750S</a></span>
+                                <span className="icon-text">Captain of <a href="http://750s.github.io">750S</a></span>
                             </div>
                             <br/>
                             <div>
                                 <FontAwesomeIcon icon={faBriefcase} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span class="icon-text">Teach programming @ Code Ninjas</span>
+                                <span className="icon-text">Teach programming @ Code Ninjas</span>
                             </div>
                             <br/>
                         </Zoom>
                     </div>
-                    <div class="col-md-6 text-center">
+                    <div className="col-md-6 text-center">
                         <Slide right>
                             <FontAwesomeIcon icon={faLaptopCode} size={Math.round(this.state.vmin/175)+"x"} style={{marginRight:"10px"}}/>
                             <p className="about-txt">Full stack developer</p>
