@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3e292571a3163567d35ccdfc422b611c",
+    "revision": "29ae21bf0da3392ca5e9efc2a87da61c",
     "url": "/index.html"
   },
   {
-    "revision": "2b0d7fa214571b902016",
+    "revision": "a8b732656d178de1edf8",
     "url": "/static/css/main.2b44dd22.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.6750d7a4.chunk.js"
   },
   {
-    "revision": "2b0d7fa214571b902016",
-    "url": "/static/js/main.f9eb7268.chunk.js"
+    "revision": "a8b732656d178de1edf8",
+    "url": "/static/js/main.dfff71a3.chunk.js"
   },
   {
     "revision": "afe569a87fce6f65f2c0",
@@ -48,16 +48,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/favicon.291eccc8.ico"
   },
   {
-    "revision": "42cc8e315792fff3e2972a8cf37d1454",
-    "url": "/static/media/google-play-badge.42cc8e31.png"
-  },
-  {
     "revision": "ee7cd8ed2dcec943251eb2763684fc6f",
     "url": "/static/media/logo.ee7cd8ed.svg"
-  },
-  {
-    "revision": "7950eaeb1bb634872969829cf6f5b2e0",
-    "url": "/static/media/maze.7950eaeb.png"
   },
   {
     "revision": "378f93d6202f0c5a0cf8a16af49ee746",
