@@ -40,7 +40,7 @@ export default class AroundTheWeb extends React.Component {
                 </div>
                 <br/>
                 <br/>
-                <h1 className="text-center display-4">Contact Me!</h1>
+                <h1 id="Contact-Me" className="text-center display-4">Contact Me!</h1>
                 <br/>
                 <p className="txtAroundWeb text-center">Please don't hesitiate to contact me. As long as you are a real person.</p>
                 <br/>

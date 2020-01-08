@@ -84,9 +84,9 @@ export default class AboutMe extends React.Component {
                         <Slide right>
                             <FontAwesomeIcon icon={faLaptopCode} size={Math.round(this.state.vmin/175)+"x"} style={{marginRight:"10px"}}/>
                             <p className="about-txt">Full stack developer</p>
-                            <p className="about-txt">Fluent in HTML, CSS, Javascript & Node.js</p>
-                            <p className="about-txt">Favorate frameworks: React & React Native</p>
-                            <p className="about-txt">Favorate Editors: Andriod Studio, Visual Studio Code & Xcode</p>
+                            <p className="about-txt">Fluent in HTML, CSS, Javascript, Node.js, Java & C++</p>
+                            <p className="about-txt">Favorite frameworks: React & React Native</p>
+                            <p className="about-txt">Favorite editors: Andriod Studio, Visual Studio Code & Xcode</p>
                         </Slide>
                     </div>
                 </div>

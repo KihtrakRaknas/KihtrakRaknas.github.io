@@ -8,8 +8,9 @@ export default class Top extends React.Component {
     render(){
         return(
             <ImgPara
-                bgImage = {require('../Imgs/Karthik.JPG')}
+                bgImage = {window.outerWidth>992?require('../Imgs/Karthik.webp'):require('../Imgs/Karthik-compressed.webp')}
                 bgImageAlt="A picture of Karthik Sankar"
+                bgImageStyle={window.chrome?{ height: '200vh',overflow: 'hidden', width: 200*5184/3456+'vh'}:{}}
                 strength={-300}
             >
                 <div style={{ height: '100vh' }} >

@@ -15,6 +15,7 @@ export default class MasonryCardDisplay extends React.Component {
     }
 
     render() {
+        console.log("mansonry - rendering")
         return(
             <div className="item-grid" style={{overflowY: "hidden"}}>
                 {this.props.children.map((childa)=>{
@@ -36,6 +37,7 @@ export default class MasonryCardDisplay extends React.Component {
     updateDimensions = () =>{
         const node = ReactDOM.findDOMNode(this);
         this.setState({width:node.offsetWidth})
+        console.log("mansonry - updateDimensions - "+node.offsetWidth)
     }
     // set up isotope
     componentDidMount() {
@@ -66,6 +68,7 @@ export default class MasonryCardDisplay extends React.Component {
                     },
                   })
             });
+            console.log("mansonry - isotope set up")
         } else {
             this.state.isotope.reloadItems();
         }

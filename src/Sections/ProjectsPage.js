@@ -4,17 +4,19 @@ import './Projects.css';
 import MasonryCardDisplay from '../Components/MasonryCardDisplay';
 import Select from 'react-select';
 import {Projects} from '../Projects';
+import CustomSelect from '../Components/CustomSelect';
 
 export default class ProjectsPage extends React.Component {
     constructor(props) {
         super(props);
         this.masonry = React.createRef();
+        this.customSelect = React.createRef();
         //this.masonry.current.updateFilter()
         this.state = {
             reverseSort:false,
             showMobileBtns:false,
-            tags:[]
         }
+        this.tags = []
       }
 
       sortBtns = ()=>{
@@ -32,17 +34,6 @@ export default class ProjectsPage extends React.Component {
             </div>
             )
       }
-      filterDropDowns = ()=>{
-        let searchOptions = [];
-        for(let tag of this.state.tags)
-            searchOptions.push({value:tag,label:tag});
-        //console.log(searchOptions)
-        return(
-            <div>
-                <Select className="mt-2" options={searchOptions} placeholder="Filter by tags" onChange={this.filterSelected} isMulti={true}/>
-            </div>
-        )
-      }
 
       filterSelected = (selctions) => {
         if(selctions)
@@ -55,12 +46,17 @@ export default class ProjectsPage extends React.Component {
         let newTags = []
         if(tags)
             for(let tag of tags)
-                if(tag&&this.state.tags.indexOf(tag) === -1)
+                if(tag&&this.tags.indexOf(tag) === -1)
                     newTags.push(tag)
-        if(newTags.length>0)
-            this.setState({
-                tags: this.state.tags.concat(newTags),
-            });
+        if(newTags.length>0){
+            this.tags = this.tags.concat(newTags)
+            console.log("projectPage - added tags")
+            let searchOptions = [];
+            for(let tag of this.tags)
+                searchOptions.push({value:tag,label:tag});
+            this.customSelect.current.updateSearchOptions(searchOptions)
+        }
+
     }
 
     render(){
@@ -74,7 +70,7 @@ export default class ProjectsPage extends React.Component {
                             {this.sortBtns()}
                         </div>
                         <div className="col-6">
-                            {this.filterDropDowns()}
+                            {<CustomSelect ref={this.customSelect} filterSelected={this.filterSelected.bind(this)}/>}
                         </div>
                     </div>
                 </div>
@@ -82,7 +78,7 @@ export default class ProjectsPage extends React.Component {
                     <button type="button" className="btn btn-outline-info" style={{display:this.state.showMobileBtns?"none":"inline-block"}} onClick={()=>this.setState({showMobileBtns:true})}>Sort/Filter</button>
                     <div style={{display:this.state.showMobileBtns?"block":"none"}}>
                         {this.sortBtns()}
-                        {this.filterDropDowns()}   
+                        {<CustomSelect ref={this.customSelect} filterSelected={this.filterSelected.bind(this)}/>}   
                     </div>
                 </div>
                 <br/>
