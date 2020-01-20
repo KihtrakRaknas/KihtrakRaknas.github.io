@@ -32,7 +32,7 @@ export const Projects = [
         project="http://red.kihtrak.com"
         tools={["Firebase Realtime Database"]} 
         languages={["JavaScript","HTML","CSS"]}
-        lastMonth="Febuary"
+        lastMonth="February"
         lastYear="2019"
         types={["Website"]}
     />,
@@ -75,10 +75,10 @@ export const Projects = [
     <ProjectCard
         title="3D Shooter"
         RepoName="3d-shooter"
-    />
+    />,
     <ProjectCard
         title="750S Team Website"
         //RepoName="3d-shooter"
         project="https://750s.github.io"
-    />       
+    />,   
 ];

@@ -60,7 +60,7 @@ export default class AboutMe extends React.Component {
                         <Zoom left>
                             <div>
                                 <FontAwesomeIcon icon={faSearchLocation} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span class="icon-text">New Jersery</span>
+                                <span class="icon-text">New Jersey</span>
                             </div>
                             <br/>
                             <div>
@@ -83,7 +83,7 @@ export default class AboutMe extends React.Component {
                     <div class="col-md-6 text-center">
                         <Slide right>
                             <FontAwesomeIcon icon={faLaptopCode} size={Math.round(this.state.vmin/175)+"x"} style={{marginRight:"10px"}}/>
-                            <p className="about-txt">Full stack developer</p>
+                            <p className="about-txt">Full-stack developer</p>
                             <p className="about-txt">Fluent in HTML, CSS, Javascript & Node.js</p>
                             <p className="about-txt">Favorate frameworks: React & React Native</p>
                             <p className="about-txt">Favorate Editors: Andriod Studio, Visual Studio Code & Xcode</p>
