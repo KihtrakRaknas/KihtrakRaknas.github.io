@@ -1,7 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faJs, faReact, faNodeJs, faGoogle, faHtml5, faCss3Alt, faJava, faAndroid, faAppStore, faAppStoreIos, faGooglePlay} from '@fortawesome/free-brands-svg-icons'
-import { faFire, faGlobe, faServer} from '@fortawesome/free-solid-svg-icons'
+import { faJs, faReact, faNodeJs, faGoogle, faHtml5, faCss3Alt, faJava, faAndroid, faAppStore, faAppStoreIos, faGooglePlay, faPython, faRaspberryPi} from '@fortawesome/free-brands-svg-icons'
+import { faFire, faGlobe, faServer, faLaptopCode, faRobot, faCube, faSuitcase, faBriefcase} from '@fortawesome/free-solid-svg-icons'
+import {Image, Transformation} from 'cloudinary-react';
+
 
 export default class ProjectCard extends React.Component {
     constructor(props){
@@ -12,48 +14,53 @@ export default class ProjectCard extends React.Component {
     }
     componentWillMount(){
         if(this.props.RepoName){
-            fetch(
-                `https://api.github.com/repos/${this.props.GithubUsername?this.props.GithubUsername:"KihtrakRaknas"}/${this.props.RepoName}/branches/${this.props.GithubBranch?this.props.GithubBranch:"master"}`
-            )
-            .then(response => {
-                response.json().then(json => {
-                    if(!json.message)
-                        this.setState({
-                            lastMonth: new Date(json.commit.commit.author.date).toLocaleString('default', { month: 'long' }),
-                            lastYear: new Date(json.commit.commit.author.date).getFullYear(),
-                            end: new Date(json.commit.commit.author.date).getTime()
-                        });
+            if(!this.props.lastMonth||!this.props.lastYear)
+                fetch(
+                    `https://api.github.com/repos/${this.props.GithubUsername?this.props.GithubUsername:"KihtrakRaknas"}/${this.props.RepoName}/branches/${this.props.GithubBranch?this.props.GithubBranch:"master"}`
+                )
+                .then(response => {
+                    response.json().then(json => {
+                        if(!json.message){
+                            this.setState({
+                                lastMonth: new Date(json.commit.commit.author.date).toLocaleString('default', { month: 'long' }),
+                                lastYear: new Date(json.commit.commit.author.date).getFullYear(),
+                                end: new Date(json.commit.commit.author.date).getTime()
+                            });
+                            console.log("setState - github end time - "+this.props.title)
+                        }
+                    });
+                })
+                .catch(error => {
+                    //console.log(error);
                 });
-            })
-            .catch(error => {
-                console.log(error);
-            });
-            fetch(
-                `https://api.github.com/repos/${this.props.GithubUsername?this.props.GithubUsername:"KihtrakRaknas"}/${this.props.RepoName}`
-            )
-            .then(response => {
-                response.json().then(json => {
-                    if(!json.message)
-                        this.setState({
-                            firstMonth: new Date(json.created_at).toLocaleString('default', { month: 'long' }),
-                            firstYear: new Date(json.created_at).getFullYear(),
-                            start: new Date(json.created_at).getTime(),
-                            description: json.description,
-                            title: json.name,
-                            code: json.svn_url,
-                            language: json.language,
-                        });
-                    else   
-                        this.setState({
-                            description: "Additional details couldn't be loaded in. Try again tommarrow or use a different network.",
-                            title: this.props.RepoName,
-                            code: `https://api.github.com/repos/${this.props.GithubUsername?this.props.GithubUsername:"KihtrakRaknas"}/${this.props.RepoName}`,
-                        });
+            if(!this.props.firstMonth||!this.props.firstYear||!this.props.description||!this.props.title||!this.props.code)
+                fetch(
+                    `https://api.github.com/repos/${this.props.GithubUsername?this.props.GithubUsername:"KihtrakRaknas"}/${this.props.RepoName}`
+                )
+                .then(response => {
+                    response.json().then(json => {
+                        if(!json.message){
+                            this.setState({
+                                firstMonth: new Date(json.created_at).toLocaleString('default', { month: 'long' }),
+                                firstYear: new Date(json.created_at).getFullYear(),
+                                start: new Date(json.created_at).getTime(),
+                                description: json.description,
+                                title: json.name,
+                                code: json.svn_url,
+                                language: json.language,
+                            });
+                            console.log("setState - github general Info - "+this.props.title)
+                        }else
+                            this.setState({
+                                description: "Additional details couldn't be loaded in. Try again tommarrow or use a different network.",
+                                title: this.props.RepoName,
+                                code: `https://api.github.com/repos/${this.props.GithubUsername?this.props.GithubUsername:"KihtrakRaknas"}/${this.props.RepoName}`,
+                            });
+                    });
+                })
+                .catch(error => {
+                    //console.log(error);
                 });
-            })
-            .catch(error => {
-                console.log(error);
-            });
         }
     }
 
@@ -109,9 +116,47 @@ export default class ProjectCard extends React.Component {
             icon = <FontAwesomeIcon icon={faAppStore}/>
             backgoundColor = "#007AFF"
             color="white"
+        }else if(name == "Python"){
+            icon = <FontAwesomeIcon icon={faPython}/>
+            backgoundColor = "#306998"
+            color="white"
+        }else if(name == "Raspberry Pi"){
+            icon = <FontAwesomeIcon icon={faRaspberryPi}/>
+            backgoundColor = "#C51A4A"
+            color="white"
+        }else if(name == "Hackathon Project"){
+            icon = <FontAwesomeIcon icon={faLaptopCode}/>
+            backgoundColor = "#E73427"
+            color="white"
+        }else if(name.includes("Vex")){
+            icon = <FontAwesomeIcon icon={faRobot}/>
+            backgoundColor = "#DA262E"
+            color="white"
+        }else if(name=="Scratch"){
+            backgoundColor = "#F0A63F"
+            color="white"
+        }else if(name=="C++"){
+            backgoundColor = "#6C9BD0"
+            color="white"
+        }else if(name=="PROS"){
+            icon = <FontAwesomeIcon icon={faRobot}/>
+            backgoundColor = "#EBC76E"
+            color="black"
+        }else if(name=="Arduino"){
+            backgoundColor = "#03A0A8"
+            color="white"
+        }else if(name=="3D Printing"){
+            icon = <FontAwesomeIcon icon={faCube}/>
+            backgoundColor = "red"
+            color="white"
+        }else if(name.includes("Work")){
+            icon = <FontAwesomeIcon icon={faBriefcase}/>
+            backgoundColor = "black"
+            color="white"
         }
+        
         return(
-            <span class="badge" style={{marginRight:"5px", backgroundColor:backgoundColor, color:color}}>{icon} {name}</span>
+            <span className="badge" style={{marginRight:"5px", backgroundColor:backgoundColor, color:color}}>{icon} {name}</span>
         )
     }
 
@@ -122,12 +167,18 @@ export default class ProjectCard extends React.Component {
         }else{
             tags = this.props.tools
         }
+        if(tags&&tags.length>0){
+            tags = tags.concat(this.props.types)
+        }else{
+            tags = this.props.types
+        }
         this.props.updateTags(tags)
         if(this.props.update)
             this.props.update()
     }
 
     render(){
+        console.log("rendering card - "+this.props.title)
         let columns = 0;
         if(this.props.width){
             if(this.props.width+30>=16*130)
@@ -143,7 +194,7 @@ export default class ProjectCard extends React.Component {
         }
         let firstYear = this.props.firstYear?this.props.firstYear:this.state.firstYear?this.state.firstYear:null
         let firstMonth = this.props.firstMonth?this.props.firstMonth:this.state.firstMonth?this.state.firstMonth:null
-        let start = this.props.firstYear?Date.parse(this.props.firstMonth+" "+this.props.firstYear):this.state.start;
+        let start = this.props.firstYear?Date.parse("1 "+this.props.firstMonth+" "+this.props.firstYear):this.state.start;
         let lastYear = this.props.lastYear?this.props.lastYear:this.state.lastYear?this.state.lastYear:null
         let lastMonth = this.props.lastMonth?this.props.lastMonth:this.state.lastMonth?this.state.lastMonth:null
         if(!lastYear&&firstYear)
@@ -154,7 +205,8 @@ export default class ProjectCard extends React.Component {
             lastMonth = firstMonth
         if(!firstMonth&&lastMonth)
             firstMonth = lastMonth
-        let end = this.props.lastYear?Date.parse(this.props.lastMonth+" "+this.props.lastYear):this.state.end;
+        let end = this.props.lastYear?Date.parse("1 "+this.props.lastMonth+" "+this.props.lastYear):this.state.end;
+
         let filterTerms = [];
         let languages = []
         if(this.props.languages){
@@ -186,18 +238,22 @@ export default class ProjectCard extends React.Component {
         let btnSize = !!this.props.project&&!!this.props.page&&(this.props.code||this.state.code)&&window.innerWidth<420?"btn-sm":""
         return(
             <div className="card" data-filter={JSON.stringify(filterTerms)} style={this.props.width?{width:(this.props.width-20*(columns-1))/columns}:null}>
-                {imgSrc?<img onLoad={this.componentDidUpdate} onError={this.componentDidUpdate} className="card-img-top" src={imgSrc} alt={`Image depicting ${this.props.title?this.props.title:this.state.title}`}/>:null}
-                <div class="card-body">
-                    <h4 class="card-title">{this.props.title?this.props.title:this.state.title}</h4>
-                    {firstYear||firstMonth||lastYear||lastMonth?firstYear==lastYear&&firstMonth==lastMonth?<h6 class="card-subtitle mb-2 text-muted time" data-start={start} data-end={end}>{firstMonth} {firstYear}</h6>:<h6 class="card-subtitle mb-2 text-muted time" data-start={firstMonth+" "+firstYear} data-end={lastMonth+" "+lastYear}>{firstMonth} {firstYear} - {lastMonth} {lastYear}</h6>:null}
-                    <p class="card-text">{this.props.description?this.props.description:this.state.description}</p>
-                    <div class="d-flex justify-content-around">
-                        {this.props.project?<a href={this.props.project} class={`btn btn-outline-success ${btnSize}`}>Open Project</a>:null}
-                        {this.props.page?<a href={this.props.page} class={`btn btn-outline-primary ${btnSize}`}>View Project Page</a>:null}
-                        {this.props.code||this.state.code?<a href={this.props.code?this.props.code:this.state.code} class={`btn btn-outline-secondary ${btnSize}`}>View Code</a>:null}
+                {this.props.cloudImg?<Image cloudName="kihtrak" publicId={this.props.cloudImg} secure="true" className="card-img-top" dpr="auto" responsive width="auto"><Transformation fetchFormat="auto"/></Image>:imgSrc?<img onLoad={this.componentDidUpdate} onError={this.componentDidUpdate} className="card-img-top" src={imgSrc} alt={`Image depicting ${this.props.title?this.props.title:this.state.title}`}/>:null}
+                <div className="card-body">
+                    <h4 className="card-title">{this.props.title?this.props.title:this.state.title}</h4>
+                    {firstYear||firstMonth||lastYear||lastMonth?firstYear==lastYear&&firstMonth==lastMonth?<h6 className="card-subtitle mb-2 text-muted time" data-start={start} data-end={end}>{firstMonth} {firstYear}</h6>:<h6 className="card-subtitle mb-2 text-muted time" data-start={start} data-end={end}>{firstMonth} {firstYear} - {lastMonth} {lastYear}</h6>:null}
+                    <p className="card-text">{this.props.description?this.props.description:this.state.description}</p>
+                    <div className="d-flex justify-content-around" style={{flexWrap:"wrap"}}>
+                        {this.props.iOSDownload?<a style={{marginTop:2,marginBottom:2}} href={this.props.iOSDownload}><img alt='Get it on the Apple App Store' src={require('../Imgs/App_Store_Badge.svg')} style={{height:37.6}}/></a>:null}
+                        {this.props.androidDownload?<a style={{marginTop:2,marginBottom:2}} href={this.props.androidDownload}><img alt='Get it on Google Play' src={require('../Imgs/google-play-badge.png')} style={{height:37.6}}/></a>:null}
+                        {this.props.project?<a href={this.props.project} className={`btn btn-outline-success ${btnSize}`} style={{marginTop:2,marginBottom:2}}>Open Project</a>:null}
+                        {this.props.page?<a href={this.props.page} className={`btn btn-outline-primary ${btnSize}`} style={{marginTop:2,marginBottom:2}}>View Project Page</a>:null}
+                        {this.props.code||this.state.code?<a href={this.props.code?this.props.code:this.state.code} className={`btn btn-outline-secondary ${btnSize}`} style={{marginTop:2,marginBottom:2}}>View Code</a>:null}
+                        {this.props.serverCode?<a href={this.props.serverCode} className={`btn btn-outline-secondary ${btnSize}`} style={{marginTop:2,marginBottom:2}}>View Server Code</a>:null}
+                        {this.props.additionalCode?<a href={this.props.additionalCode} className={`btn btn-outline-secondary ${btnSize}`} style={{marginTop:2,marginBottom:2}}>View Additional Code</a>:null}
                     </div>
                 </div>
-                {languages.length>0||tools.length>0||types.length>0?<div class="card-footer">{languages}{languages.length>0?<br/>:null}{tools}{tools.length>0?<br/>:null}{types}</div>:null}
+                {languages.length>0||tools.length>0||types.length>0?<div className="card-footer">{languages}{languages.length>0?<br/>:null}{tools}{tools.length>0?<br/>:null}{types}</div>:null}
             </div>
         )
         
