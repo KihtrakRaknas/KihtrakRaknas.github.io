@@ -15,7 +15,7 @@ export default class AroundTheWeb extends React.Component {
         return(
             <div>
                 <h1 className="text-center display-3">Karthik Sankar Around The Web</h1>
-                <p className="txtAroundWeb text-center">Wait, is this the Karthik Sankar that your looking for? See if any of these help you identify me:</p>
+                <p className="txtAroundWeb text-center">Wait, is this the Karthik Sankar that you're looking for? See if any of these help you identify me:</p>
                 <br/>
                 <div className="row">
                     <div className="col-md-4 text-center mb-4">
@@ -42,7 +42,7 @@ export default class AroundTheWeb extends React.Component {
                 <br/>
                 <h1 id="Contact-Me" className="text-center display-4">Contact Me!</h1>
                 <br/>
-                <p className="txtAroundWeb text-center">Please don't hesitiate to contact me. As long as you are a real person.</p>
+                <p className="txtAroundWeb text-center">Please don't hesitate to contact me. As long as you are a real person.</p>
                 <br/>
                 {this.state.captcha?null:<div className="contain">
                     <ReCAPTCHA
