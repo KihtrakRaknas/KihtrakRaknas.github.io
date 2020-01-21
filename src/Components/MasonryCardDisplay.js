@@ -17,7 +17,7 @@ export default class MasonryCardDisplay extends React.Component {
     render() {
         console.log("mansonry - rendering")
         return(
-            <div className="item-grid" style={{overflowY: "hidden"}}>
+            <div className="item-grid" style={{overflowX: "hidden"}}>
                 {this.props.children.map((childa)=>{
                     var {...other} = childa.props
                     return(

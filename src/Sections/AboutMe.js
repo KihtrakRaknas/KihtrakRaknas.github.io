@@ -55,7 +55,7 @@ export default class AboutMe extends React.Component {
                 <Jump>
                     
                 </Jump>
-                <div className="row">
+                <div className="row" style="overflow-x:hidden">
                     <div className="col-md-6 text-center">
                         <Zoom left>
                             <div>
