@@ -60,11 +60,7 @@ export default class AboutMe extends React.Component {
                         <Zoom left>
                             <div>
                                 <FontAwesomeIcon icon={faSearchLocation} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-<<<<<<< HEAD
                                 <span class="icon-text">New Jersey</span>
-=======
-                                <span className="icon-text">New Jersery</span>
->>>>>>> 0a63ba39cd08c48b4dcdc64e6fbab1e28c067837
                             </div>
                             <br/>
                             <div>
