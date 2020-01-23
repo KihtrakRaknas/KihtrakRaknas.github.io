@@ -1,16 +1,4 @@
 /*!
- * getSize v2.0.3
- * measure size of elements
- * MIT license
- */
-
-/*!
- * Outlayer v2.1.1
- * the brains and guts of a layout library
- * MIT license
- */
-
-/*!
  * Isotope v3.0.6
  *
  * Licensed GPLv3 for open source use
@@ -35,8 +23,13 @@
  */
 
 /*!
- * The buffer module from node.js, for the browser.
- *
- * @author   Feross Aboukhadijeh <http://feross.org>
- * @license  MIT
+ * getSize v2.0.3
+ * measure size of elements
+ * MIT license
+ */
+
+/*!
+ * Outlayer v2.1.1
+ * the brains and guts of a layout library
+ * MIT license
  */
