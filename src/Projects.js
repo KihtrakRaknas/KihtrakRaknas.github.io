@@ -361,6 +361,20 @@ export const Projects = [
         types={["Website","Work - Code Ninjas"]}
         key="ninjaEvaluation"
     />,
+    <ProjectCard 
+        title="Scoutr - A Robotics Scouting Tool" 
+        //img={require('./Imgs/Karthik-compressed.jpg')} 
+        //cloudImg="Karthik-small"
+        description=`A mobile-first tool for robotics competitions. Simply enter your name and team number. The app will automatically find the competitions you are signed up for and display them. It will show you all the teams at the competition, and allow you to take notes and sync them accross your team member's devices. The app will also retrive other useful information like a team's "skills" score and past awards. All the data gets saved offline incase the internet at a competition is spotty.` 
+        project="https://kihtrak.com/scoutr/"
+        code="https://github.com/KihtrakRaknas/scoutr"
+        RepoName="scoutr"
+        iOSDownload="https://apps.apple.com/tc/app/robotics-scouting-tool/id1494612234"
+        androidDownload="https://play.google.com/store/apps/details?id=com.kihtrak.scouter"
+        tools={["Firebase Cloud Firestore","Expo API","VexDB"]} 
+        languages={["JavaScript","React Native"]}
+        types={["iOS App","Andriod App","Website"]}
+    />,
 ];
 /*
     <ProjectCard
