@@ -305,9 +305,9 @@ export const Projects = [
         firstYear="2018"
         lastMonth="October"
         lastYear="2018"
-        description="One of my first custom 3D prints. It was a tube meant to simulate the exact diameter of an obsticle in that year's robotics competition. It took many attempts because I had to find a way to make it strong enough to hold a robot up yet cheap enough to print it at our public library." 
+        description="One of my first custom 3D prints. It was a tube meant to simulate the exact diameter of an obstacle in that year's robotics competition. It took many attempts because I had to find a way to make it strong enough to hold a robot up yet cheap enough to print it at our public library." 
         page="https://roboticsportfolio.kihtrak.com/CAD/parkingTile"
-        types={["Real World","3D Printing"]}
+        types={["Real-World","3D Printing"]}
         key="TubeCreation"
     />,
     <ProjectCard
@@ -365,7 +365,7 @@ export const Projects = [
         title="Scoutr - A Robotics Scouting Tool" 
         //img={require('./Imgs/Karthik-compressed.jpg')} 
         //cloudImg="Karthik-small"
-        description=`A mobile-first tool for robotics competitions. Simply enter your name and team number. The app will automatically find the competitions you are signed up for and display them. It will show you all the teams at the competition, and allow you to take notes and sync them accross your team member's devices. The app will also retrive other useful information like a team's "skills" score and past awards. All the data gets saved offline incase the internet at a competition is spotty.` 
+        description={`A mobile-first tool for robotics competitions. Simply enter your name and team number. The app will automatically find the competitions you are signed up for and display them. It will show you all the teams at the competition, and allow you to take notes and sync them accross your team member's devices. The app will also retrive other useful information like a team's "skills" score and past awards. All the data gets saved offline incase the internet at a competition is spotty.`} 
         project="https://kihtrak.com/scoutr/"
         code="https://github.com/KihtrakRaknas/scoutr"
         RepoName="scoutr"

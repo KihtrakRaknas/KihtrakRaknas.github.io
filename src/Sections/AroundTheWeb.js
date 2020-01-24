@@ -51,14 +51,14 @@ export default class AroundTheWeb extends React.Component {
                     </div>
                     <div className="col-md-4 text-center mb-4">
                         <a href="https://github.com/kihtrakRaknas">
-                            <img style={{width:50}} alt="Github Logo" loading="lazy" src="https://image.flaticon.com/icons/svg/25/25231.svg"/>
+                            <img style={{width:50}} alt="Github Logo" width="50" loading="lazy" src="https://image.flaticon.com/icons/svg/25/25231.svg"/>
                             <strong className="id ml-4">KihtrakRaknas
                             </strong>
                         </a>
                     </div>
                     <div className="col-md-4 text-center mb-4">
                         <a href="https://linkedin.com/in/karthik-sankar-a5a523178">
-                            <Image cloudName="kihtrak" publicId={'LinkedIn_logo'} dpr="auto" responsive width="50" alt="LinkedIn Logo" secure="true"><Transformation fetchFormat="auto"/></Image>
+                            <Image cloudName="kihtrak" publicId={'LinkedIn_logo2'} dpr="auto" responsive width="50" alt="LinkedIn Logo" secure="true"><Transformation fetchFormat="auto"/></Image>
                             <strong className="id ml-4">Karthik Sankar</strong>
                         </a>
                     </div>
