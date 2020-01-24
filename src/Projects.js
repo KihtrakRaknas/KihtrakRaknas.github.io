@@ -12,8 +12,11 @@ export const Projects = [
         GithubBranch="Source"
         languages={["React","JavaScript","HTML","CSS"]}
         types={["Website","Portfolio"]}
+        key="Kihtrak.com"
     />,
     <ProjectCard 
+        img={require('./Imgs/gradeView.PNG')} 
+        cloudImg="gradeView"
         title="GradeView - iOS and Andriod App"
         RepoName="GradeViewApp"
         serverCode="https://github.com/KihtrakRaknas/GradeView"
@@ -23,9 +26,12 @@ export const Projects = [
         tools={["Firebase Cloud Firestore","Google Cloud Functions","Expo API"]} 
         languages={["JavaScript","React Native","Node.js"]}
         types={["iOS App","Andriod App","Server"]}
+        key="GradeView - iOS and Andriod App"
     />,
     <ProjectCard
         title="REDirector"
+        img={require('./Imgs/red.PNG')} 
+        cloudImg="red"
         RepoName="RED" 
         project="http://red.kihtrak.com"
         tools={["Firebase Realtime Database"]} 
@@ -33,16 +39,22 @@ export const Projects = [
         lastMonth="February"
         lastYear="2019"
         types={["Website"]}
+        key="REDirector"
     />,
     <ProjectCard
         title="Potato Co."
+        img={require('./Imgs/potatoes.png')} 
+        cloudImg="potatoes"
         RepoName="Potato-co" 
         project="https://potato.kihtrak.com/" 
         languages={["JavaScript","HTML","CSS"]}
         types={["Website"]}
+        key="Potato Co."
     />,
     <ProjectCard 
         title="Old Homepage"
+        img={require('./Imgs/old.PNG')} 
+        cloudImg="old"
         description="One of my first experiences with HTML and CSS. It has been mildly vandalized and updated with hyperlinks to help web crawlers."
         RepoName="Old-Homepage"
         firstMonth="November"
@@ -52,12 +64,16 @@ export const Projects = [
         project="http://old.kihtrak.com"
         languages={["JavaScript","HTML","CSS"]}
         types={["Website"]}
+        key="Old Homepage"
     />,
     <ProjectCard 
         title="Quick Set Up"
+        img={require('./Imgs/setup.PNG')} 
+        cloudImg="setup"
         RepoName="setup"
         project="https://setup.kihtrak.com/"
         types={["Website"]}
+        key="Quick Set Up"
     />,
     <ProjectCard 
         title="Basic Calculator"
@@ -73,6 +89,7 @@ export const Projects = [
         lastMonth="October"
         firstYear="2018"
         lastYear="2018"
+        key="Basic Calculator"
     />,
     <ProjectCard
         title="3D Shooter"
@@ -82,6 +99,7 @@ export const Projects = [
         cloudImg="3dShooter"
         languages={["JavaScript","HTML","CSS","THREE.js"]}
         types={["Website"]}
+        key="3D Shooter"
     />,
     <ProjectCard
         title="750S Team Website"
@@ -97,6 +115,7 @@ export const Projects = [
         languages={["JavaScript","HTML","CSS"]}
         tools={["Google Sheets API"]}
         types={["Website"]}
+        key="750S Team Website"
     />,
     <ProjectCard
         title="3D-Maze"
@@ -105,6 +124,7 @@ export const Projects = [
         img={require('./Imgs/maze.png')}
         cloudImg="maze"
         languages={["Java"]}
+        key="3D-Maze"
     />,
     <ProjectCard 
         title="Mr. Poot"
@@ -123,6 +143,7 @@ export const Projects = [
         tools={["Expo API"]} 
         languages={["JavaScript","React Native"]}
         types={["iOS App","Andriod App"]}
+        key="Mr. Poot"
     />,
     <ProjectCard
         img={require('./Imgs/NHSStaffFeedback.png')} 
@@ -138,6 +159,7 @@ export const Projects = [
         tools={["Firebase Realtime Database"]} 
         languages={["JavaScript","HTML","CSS"]}
         types={["Website"]}
+        key="NHSStaffFeedback"
     />,
     <ProjectCard
         img={require('./Imgs/oldRoboticsPortfolio.PNG')} 
@@ -154,6 +176,7 @@ export const Projects = [
         tools={["Firebase Realtime Database"]} 
         languages={["JavaScript","HTML","CSS"]}
         types={["Website","Portfolio"]}
+        key="oldRoboticsPortfolio"
     />,
     <ProjectCard
         img={require('./Imgs/newRoboticsPortfolio.png')} 
@@ -169,6 +192,7 @@ export const Projects = [
         code="https://github.com/KihtrakRaknas/Robotics-Portfolio-2.0"
         languages={["React","JavaScript","HTML","CSS"]}
         types={["Website","Portfolio"]}
+        key="newRoboticsPortfolio"
     />,
     <ProjectCard
         //img={require('./Imgs/newRoboticsPortfolio.png')} 
@@ -183,6 +207,7 @@ export const Projects = [
         languages={["C"]}
         tools={["PROS"]}
         types={["Vex EDR Cortex"]}
+        key="Sophomore Year Robot Code"
     />,
     <ProjectCard
         //img={require('./Imgs/newRoboticsPortfolio.png')} 
@@ -196,6 +221,7 @@ export const Projects = [
         languages={["C++"]}
         tools={["Vex Coding Studio"]}
         types={["Vex V5 Brain"]}
+        key="Junior Year Robot Code"
     />,
     <ProjectCard
         //img={require('./Imgs/newRoboticsPortfolio.png')} 
@@ -206,6 +232,7 @@ export const Projects = [
         languages={["C++"]}
         tools={["PROS"]}
         types={["Vex V5 Brain"]}
+        key="Senior Year Robot Code"
     />,
     <ProjectCard
         img={require('./Imgs/myAwesomeStudio.png')} 
@@ -218,6 +245,7 @@ export const Projects = [
         lastMonth="February"
         lastYear="2016"
         languages={["Scratch"]}
+        key="myAwesomeStudio"
     />,
     <ProjectCard
         img={require('./Imgs/ActualTrash.png')} 
@@ -232,6 +260,7 @@ export const Projects = [
         project="https://scratch.mit.edu/projects/163450536/"
         languages={["Scratch"]}
         types={["Hackathon Project"]}
+        key="ActualTrash"
     />,
     <ProjectCard
         img={require('./Imgs/multiPong.jpg')} 
@@ -249,10 +278,11 @@ export const Projects = [
         tools={["Firebase Realtime Database"]} 
         languages={["JavaScript","HTML","CSS"]}
         types={["Hackathon Project","Website"]}
+        key="multiPong"
     />,
     <ProjectCard
-        img={require('./Imgs/multiPong.jpg')} 
-        cloudImg="multiPong"
+        img={require('./Imgs/smartBottle.jpeg')} 
+        cloudImg="smartBottle"
         title="Smart Bottle"
         RepoName="SmartBottleApp"
         firstMonth="November"
@@ -260,12 +290,12 @@ export const Projects = [
         lastMonth="November"
         lastYear="2019"
         description="A hackathon project from HackPHS 2019. It was made from a Raspberry Pi, Arduino, gyroscope and accelerometer attached to a water bottle. It connects to a react native app to display how much water you drank. The app also allows you to manually track water intake and water content of the food you eat." 
-        page="https://kihtrak.com/MultiPong/"
-        project="https://devpost.com/software/smartbottle-dhg0uk"
+        page="https://devpost.com/software/smartbottle-dhg0uk"
         code="https://github.com/KihtrakRaknas/SmartBottleApp"
         additionalCode="https://github.com/evelyn-fu/SmartBottlePi"
         languages={["JavaScript","React Native","Node.js","Python","C++"]}
         types={["Hackathon Project","iOS App","Andriod App","Arduino","Raspberry Pi"]}
+        key="Smart Bottle"
     />,
     <ProjectCard
         img={require('./Imgs/TubeCreation.png')} 
@@ -278,6 +308,7 @@ export const Projects = [
         description="One of my first custom 3D prints. It was a tube meant to simulate the exact diameter of an obsticle in that year's robotics competition. It took many attempts because I had to find a way to make it strong enough to hold a robot up yet cheap enough to print it at our public library." 
         page="https://roboticsportfolio.kihtrak.com/CAD/parkingTile"
         types={["Real World","3D Printing"]}
+        key="TubeCreation"
     />,
     <ProjectCard
         img={require('./Imgs/goldbelt.PNG')} 
@@ -293,9 +324,11 @@ export const Projects = [
         tools={["Firebase Realtime Database"]} 
         languages={["JavaScript","HTML","CSS"]}
         types={["Website","Work - Code Ninjas"]}
+        key="goldbelt"
     />,
     <ProjectCard
-        //img={require('./Imgs/goldbelt.PNG')} 
+        img={require('./Imgs/ninjaBucks.PNG')} 
+        cloudImg="ninjaBucks"
         title="NinjaBucks"
         RepoName="NinjaBucks"
         firstMonth="December"
@@ -309,6 +342,7 @@ export const Projects = [
         tools={["Firebase Realtime Database"]} 
         languages={["JavaScript","HTML","CSS"]}
         types={["Website","Work - Code Ninjas"]}
+        key="NinjaBucks"
     />,
     <ProjectCard
         img={require('./Imgs/ninjaEvaluation.PNG')} 
@@ -325,6 +359,7 @@ export const Projects = [
         tools={["Firebase Realtime Database"]} 
         languages={["JavaScript","HTML","CSS"]}
         types={["Website","Work - Code Ninjas"]}
+        key="ninjaEvaluation"
     />,
 ];
 /*

@@ -1,8 +1,6 @@
 import React from 'react';
-import ProjectCard from '../Components/ProjectCard'
 import './Projects.css';
 import MasonryCardDisplay from '../Components/MasonryCardDisplay';
-import Select from 'react-select';
 import {Projects} from '../Projects';
 import CustomSelect from '../Components/CustomSelect';
 
@@ -11,6 +9,7 @@ export default class ProjectsPage extends React.Component {
         super(props);
         this.masonry = React.createRef();
         this.customSelect = React.createRef();
+        this.customSelectMobile = React.createRef();
         //this.masonry.current.updateFilter()
         this.state = {
             reverseSort:false,
@@ -44,10 +43,12 @@ export default class ProjectsPage extends React.Component {
 
     updateTags = (tags) =>{
         let newTags = []
+        console.log(tags)
         if(tags)
             for(let tag of tags)
                 if(tag&&this.tags.indexOf(tag) === -1)
                     newTags.push(tag)
+        console.log("new"+newTags)
         if(newTags.length>0){
             this.tags = this.tags.concat(newTags)
             console.log("projectPage - added tags")
@@ -55,8 +56,11 @@ export default class ProjectsPage extends React.Component {
             for(let tag of this.tags)
                 searchOptions.push({value:tag,label:tag});
             this.customSelect.current.updateSearchOptions(searchOptions)
+            this.customSelectMobile.current.updateSearchOptions(searchOptions)
+            console.log("------------------------------------")
+            console.log(searchOptions)
         }
-
+console.log(this.tags)
     }
 
     render(){
@@ -78,7 +82,7 @@ export default class ProjectsPage extends React.Component {
                     <button type="button" className="btn btn-outline-info" style={{display:this.state.showMobileBtns?"none":"inline-block"}} onClick={()=>this.setState({showMobileBtns:true})}>Sort/Filter</button>
                     <div style={{display:this.state.showMobileBtns?"block":"none"}}>
                         {this.sortBtns()}
-                        {<CustomSelect ref={this.customSelect} filterSelected={this.filterSelected.bind(this)}/>}   
+                        {<CustomSelect ref={this.customSelectMobile} filterSelected={this.filterSelected.bind(this)}/>}   
                     </div>
                 </div>
                 <br/>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faJs, faReact, faNodeJs, faGoogle, faHtml5, faCss3Alt, faJava, faAndroid, faAppStore, faAppStoreIos, faGooglePlay, faPython, faRaspberryPi} from '@fortawesome/free-brands-svg-icons'
-import { faFire, faGlobe, faServer, faLaptopCode, faRobot, faCube, faSuitcase, faBriefcase} from '@fortawesome/free-solid-svg-icons'
+import { faJs, faReact, faNodeJs, faGoogle, faHtml5, faCss3Alt, faJava, faAndroid, faAppStore, faGooglePlay, faPython, faRaspberryPi} from '@fortawesome/free-brands-svg-icons'
+import { faFire, faGlobe, faServer, faLaptopCode, faRobot, faCube, faBriefcase} from '@fortawesome/free-solid-svg-icons'
 import {Image, Transformation} from 'cloudinary-react';
 
 
@@ -68,7 +68,7 @@ export default class ProjectCard extends React.Component {
         let icon = null;
         let backgoundColor = "black";
         let color = "white"
-        if(name == "JavaScript"){
+        if(name === "JavaScript"){
             icon = <FontAwesomeIcon icon={faJs}/>
             backgoundColor = "#f0db4f"
             color = "black"
@@ -76,7 +76,7 @@ export default class ProjectCard extends React.Component {
             icon = <FontAwesomeIcon icon={faReact}/>
             backgoundColor = "#61dbfb"
             color = "black"
-        }else if(name == "Node.js"){
+        }else if(name === "Node.js"){
             icon = <FontAwesomeIcon icon={faNodeJs}/>
             backgoundColor = "#68A063"
             color = "white"
@@ -92,19 +92,19 @@ export default class ProjectCard extends React.Component {
             icon = <FontAwesomeIcon icon={faHtml5}/>
             backgoundColor = "#F16529"
             color = "white"
-        }else if(name == "CSS"){
+        }else if(name === "CSS"){
             icon = <FontAwesomeIcon icon={faCss3Alt}/>
             backgoundColor = "#264de4"
             color = "white"
-        }else if(name == "Java"){
+        }else if(name === "Java"){
             icon = <FontAwesomeIcon icon={faJava}/>
             backgoundColor = "#f89820"
             color = "black"//
-        }else if(name == "Website"){
+        }else if(name === "Website"){
             icon = <FontAwesomeIcon icon={faGlobe}/>
-        }else if(name == "Server"){
+        }else if(name === "Server"){
             icon = <FontAwesomeIcon icon={faServer}/>
-        }else if(name=="Andriod App"){
+        }else if(name==="Andriod App"){
             icon = <FontAwesomeIcon icon={faGooglePlay}/>
             backgoundColor="#3BCCFF"
             color="white"
@@ -112,19 +112,19 @@ export default class ProjectCard extends React.Component {
             icon = <FontAwesomeIcon icon={faAndroid}/>
             backgoundColor="#a4c639"
             color="black"
-        }else if(name == "iOS App"){
+        }else if(name === "iOS App"){
             icon = <FontAwesomeIcon icon={faAppStore}/>
             backgoundColor = "#007AFF"
             color="white"
-        }else if(name == "Python"){
+        }else if(name === "Python"){
             icon = <FontAwesomeIcon icon={faPython}/>
             backgoundColor = "#306998"
             color="white"
-        }else if(name == "Raspberry Pi"){
+        }else if(name === "Raspberry Pi"){
             icon = <FontAwesomeIcon icon={faRaspberryPi}/>
             backgoundColor = "#C51A4A"
             color="white"
-        }else if(name == "Hackathon Project"){
+        }else if(name === "Hackathon Project"){
             icon = <FontAwesomeIcon icon={faLaptopCode}/>
             backgoundColor = "#E73427"
             color="white"
@@ -132,20 +132,20 @@ export default class ProjectCard extends React.Component {
             icon = <FontAwesomeIcon icon={faRobot}/>
             backgoundColor = "#DA262E"
             color="white"
-        }else if(name=="Scratch"){
+        }else if(name==="Scratch"){
             backgoundColor = "#F0A63F"
             color="white"
-        }else if(name=="C++"){
+        }else if(name==="C++"){
             backgoundColor = "#6C9BD0"
             color="white"
-        }else if(name=="PROS"){
+        }else if(name==="PROS"){
             icon = <FontAwesomeIcon icon={faRobot}/>
             backgoundColor = "#EBC76E"
             color="black"
-        }else if(name=="Arduino"){
+        }else if(name==="Arduino"){
             backgoundColor = "#03A0A8"
             color="white"
-        }else if(name=="3D Printing"){
+        }else if(name==="3D Printing"){
             icon = <FontAwesomeIcon icon={faCube}/>
             backgoundColor = "red"
             color="white"
@@ -156,7 +156,7 @@ export default class ProjectCard extends React.Component {
         }
         
         return(
-            <span className="badge" style={{marginRight:"5px", backgroundColor:backgoundColor, color:color}}>{icon} {name}</span>
+            <span key={name} className="badge" style={{marginRight:"5px", backgroundColor:backgoundColor, color:color}}>{icon} {name}</span>
         )
     }
 
@@ -238,10 +238,10 @@ export default class ProjectCard extends React.Component {
         let btnSize = !!this.props.project&&!!this.props.page&&(this.props.code||this.state.code)&&window.innerWidth<420?"btn-sm":""
         return(
             <div className="card" data-filter={JSON.stringify(filterTerms)} style={this.props.width?{width:(this.props.width-20*(columns-1))/columns}:null}>
-                {this.props.cloudImg?<Image cloudName="kihtrak" publicId={this.props.cloudImg} secure="true" className="card-img-top" dpr="auto" responsive width="auto"><Transformation fetchFormat="auto"/></Image>:imgSrc?<img onLoad={this.componentDidUpdate} onError={this.componentDidUpdate} className="card-img-top" src={imgSrc} alt={`Image depicting ${this.props.title?this.props.title:this.state.title}`}/>:null}
+                {this.props.cloudImg?<Image cloudName="kihtrak" publicId={this.props.cloudImg} secure="true" className="card-img-top" dpr="auto" responsive width="auto" alt={`Thumbnail for ${this.props.title?this.props.title:this.state.title}`}><Transformation fetchFormat="auto"/></Image>:imgSrc?<img onLoad={this.componentDidUpdate} onError={this.componentDidUpdate} className="card-img-top" src={imgSrc} alt={`Thumbnail for ${this.props.title?this.props.title:this.state.title}`}/>:null}
                 <div className="card-body">
                     <h4 className="card-title">{this.props.title?this.props.title:this.state.title}</h4>
-                    {firstYear||firstMonth||lastYear||lastMonth?firstYear==lastYear&&firstMonth==lastMonth?<h6 className="card-subtitle mb-2 text-muted time" data-start={start} data-end={end}>{firstMonth} {firstYear}</h6>:<h6 className="card-subtitle mb-2 text-muted time" data-start={start} data-end={end}>{firstMonth} {firstYear} - {lastMonth} {lastYear}</h6>:null}
+                    {firstYear||firstMonth||lastYear||lastMonth?firstYear===lastYear&&firstMonth===lastMonth?<h6 className="card-subtitle mb-2 text-muted time" data-start={start} data-end={end}>{firstMonth} {firstYear}</h6>:<h6 className="card-subtitle mb-2 text-muted time" data-start={start} data-end={end}>{firstMonth} {firstYear} - {lastMonth} {lastYear}</h6>:null}
                     <p className="card-text">{this.props.description?this.props.description:this.state.description}</p>
                     <div className="d-flex justify-content-around" style={{flexWrap:"wrap"}}>
                         {this.props.iOSDownload?<a style={{marginTop:2,marginBottom:2}} href={this.props.iOSDownload}><img alt='Get it on the Apple App Store' src={require('../Imgs/App_Store_Badge.svg')} style={{height:37.6}}/></a>:null}

@@ -1,15 +1,11 @@
 import React from 'react';
-import { Parallax as ImgPara } from 'react-parallax';
-import Parallax from 'react-rellax';
 import Bounce from 'react-reveal/Bounce';
 import Jump from 'react-reveal/Jump';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome , faSchool ,faSearchLocation, faBriefcase , faRobot, faLaptopCode} from '@fortawesome/free-solid-svg-icons'
+import { faSchool ,faSearchLocation, faBriefcase , faRobot, faLaptopCode} from '@fortawesome/free-solid-svg-icons'
 import './AboutMe.css'
 import Zoom from 'react-reveal/Zoom';
 import Slide from 'react-reveal/Slide';
-var ReactRotatingText = require('react-rotating-text');
-
 
 export default class AboutMe extends React.Component {
     constructor(){
@@ -55,12 +51,12 @@ export default class AboutMe extends React.Component {
                 <Jump>
                     
                 </Jump>
-                <div className="row" style="overflow-x:hidden">
+                <div className="row" style={{overflowX:'hidden'}}>
                     <div className="col-md-6 text-center">
                         <Zoom left>
                             <div>
                                 <FontAwesomeIcon icon={faSearchLocation} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span class="icon-text">New Jersey</span>
+                                <span className="icon-text">New Jersey</span>
                             </div>
                             <br/>
                             <div>
