@@ -23,13 +23,13 @@
  */
 
 /*!
- * getSize v2.0.3
- * measure size of elements
+ * Outlayer v2.1.1
+ * the brains and guts of a layout library
  * MIT license
  */
 
 /*!
- * Outlayer v2.1.1
- * the brains and guts of a layout library
+ * getSize v2.0.3
+ * measure size of elements
  * MIT license
  */
