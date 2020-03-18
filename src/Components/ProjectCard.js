@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faJs, faReact, faNodeJs, faGoogle, faHtml5, faCss3Alt, faJava, faAndroid, faAppStore, faGooglePlay, faPython, faRaspberryPi} from '@fortawesome/free-brands-svg-icons'
-import { faFire, faGlobe, faServer, faLaptopCode, faRobot, faCube, faBriefcase} from '@fortawesome/free-solid-svg-icons'
+import { faJs, faReact, faNodeJs, faGoogle, faHtml5, faCss3Alt, faJava, faAndroid, faAppStore, faGooglePlay, faPython, faRaspberryPi, faUnity, faSteam} from '@fortawesome/free-brands-svg-icons'
+import { faFire, faGlobe, faServer, faLaptopCode, faRobot, faCube, faBriefcase, faDesktop, faVrCardboard} from '@fortawesome/free-solid-svg-icons'
 import {Image, Transformation} from 'cloudinary-react';
 
 
@@ -135,7 +135,7 @@ export default class ProjectCard extends React.Component {
         }else if(name==="Scratch"){
             backgoundColor = "#F0A63F"
             color="white"
-        }else if(name==="C++"){
+        }else if(name==="C++" || name==="C#"){
             backgoundColor = "#6C9BD0"
             color="white"
         }else if(name==="PROS"){
@@ -149,10 +149,22 @@ export default class ProjectCard extends React.Component {
             icon = <FontAwesomeIcon icon={faCube}/>
             backgoundColor = "red"
             color="white"
-        }else if(name.includes("Work")){
+        }else if(name&&name.includes("Work")){
             icon = <FontAwesomeIcon icon={faBriefcase}/>
             backgoundColor = "black"
             color="white"
+        }else if(name&&name.includes("Unity")){
+            icon = <FontAwesomeIcon icon={faUnity}/>
+            backgoundColor = "white"
+            color="black"
+        }else if(name&&name.includes("Steam")){
+            icon = <FontAwesomeIcon icon={faSteam}/>
+            backgoundColor = "white"
+            color="#1b2838"
+        }else if(name&&name.includes("PC")){
+            icon = <FontAwesomeIcon icon={faDesktop}/>
+        }else if((name&&name.includes("VR")) || name=="Virtual Reality" || (name&&name.includes("Cardboard"))){
+            icon = <FontAwesomeIcon icon={faVrCardboard}/>
         }
         
         return(
@@ -244,13 +256,14 @@ export default class ProjectCard extends React.Component {
                     {firstYear||firstMonth||lastYear||lastMonth?firstYear===lastYear&&firstMonth===lastMonth?<h6 className="card-subtitle mb-2 text-muted time" data-start={start} data-end={end}>{firstMonth} {firstYear}</h6>:<h6 className="card-subtitle mb-2 text-muted time" data-start={start} data-end={end}>{firstMonth} {firstYear} - {lastMonth} {lastYear}</h6>:null}
                     <p className="card-text">{this.props.description?this.props.description:this.state.description}</p>
                     <div className="d-flex justify-content-around" style={{flexWrap:"wrap"}}>
-                        {this.props.iOSDownload?<a style={{marginTop:2,marginBottom:2}} href={this.props.iOSDownload}><img alt='Get it on the Apple App Store' src={require('../Imgs/App_Store_Badge.svg')} style={{height:37.6}}/></a>:null}
-                        {this.props.androidDownload?<a style={{marginTop:2,marginBottom:2}} href={this.props.androidDownload}><img alt='Get it on Google Play' src={require('../Imgs/google-play-badge.png')} style={{height:37.6}}/></a>:null}
-                        {this.props.project?<a href={this.props.project} className={`btn btn-outline-success ${btnSize}`} style={{marginTop:2,marginBottom:2}}>Open Project</a>:null}
-                        {this.props.page?<a href={this.props.page} className={`btn btn-outline-primary ${btnSize}`} style={{marginTop:2,marginBottom:2}}>View Project Page</a>:null}
-                        {this.props.code||this.state.code?<a href={this.props.code?this.props.code:this.state.code} className={`btn btn-outline-secondary ${btnSize}`} style={{marginTop:2,marginBottom:2}}>View Code</a>:null}
-                        {this.props.serverCode?<a href={this.props.serverCode} className={`btn btn-outline-secondary ${btnSize}`} style={{marginTop:2,marginBottom:2}}>View Server Code</a>:null}
-                        {this.props.additionalCode?<a href={this.props.additionalCode} className={`btn btn-outline-secondary ${btnSize}`} style={{marginTop:2,marginBottom:2}}>View Additional Code</a>:null}
+                        {this.props.iOSDownload?<a target="_blank" style={{marginTop:2,marginBottom:2}} href={this.props.iOSDownload}><img alt='Get it on the Apple App Store' src={require('../Imgs/App_Store_Badge.svg')} style={{height:37.6}}/></a>:null}
+                        {this.props.androidDownload?<a target="_blank" style={{marginTop:2,marginBottom:2}} href={this.props.androidDownload}><img alt='Get it on Google Play' src={require('../Imgs/google-play-badge.png')} style={{height:37.6}}/></a>:null}
+                        {this.props.project?<a target="_blank" href={this.props.project} className={`btn btn-outline-success ${btnSize}`} style={{marginTop:2,marginBottom:2}}>Open Project</a>:null}
+                        {this.props.download?<a target="_blank" href={this.props.download} className={`btn btn-outline-success ${btnSize}`} style={{marginTop:2,marginBottom:2}}>Download Project</a>:null}
+                        {this.props.page?<a target="_blank" href={this.props.page} className={`btn btn-outline-primary ${btnSize}`} style={{marginTop:2,marginBottom:2}}>View Project Page</a>:null}
+                        {this.props.code||this.state.code?<a target="_blank" href={this.props.code?this.props.code:this.state.code} className={`btn btn-outline-secondary ${btnSize}`} style={{marginTop:2,marginBottom:2}}>View Code</a>:null}
+                        {this.props.serverCode?<a target="_blank" href={this.props.serverCode} className={`btn btn-outline-secondary ${btnSize}`} style={{marginTop:2,marginBottom:2}}>View Server Code</a>:null}
+                        {this.props.additionalCode?<a target="_blank" href={this.props.additionalCode} className={`btn btn-outline-secondary ${btnSize}`} style={{marginTop:2,marginBottom:2}}>View Additional Code</a>:null}
                     </div>
                 </div>
                 {languages.length>0||tools.length>0||types.length>0?<div className="card-footer">{languages}{languages.length>0?<br/>:null}{tools}{tools.length>0?<br/>:null}{types}</div>:null}

@@ -2,22 +2,10 @@ import React from 'react';
 import ProjectCard from './Components/ProjectCard'
 export const Projects = [
     <ProjectCard 
-        title="Kihtrak.com" 
-        img={require('./Imgs/Karthik-compressed.jpg')} 
-        cloudImg="Karthik-small"
-        description="A compilation of my projects! The website you are viewing right now" 
-        project="http://kihtrak.com"
-        code="https://github.com/KihtrakRaknas/KihtrakRaknas.github.io"
-        RepoName="KihtrakRaknas.github.io"
-        GithubBranch="Source"
-        languages={["React","JavaScript","HTML","CSS"]}
-        types={["Website","Portfolio"]}
-        key="Kihtrak.com"
-    />,
-    <ProjectCard 
         img={require('./Imgs/gradeView.PNG')} 
         cloudImg="gradeView"
         title="GradeView - iOS and Andriod App"
+        description={`An app that provides SBHS students with access to their grades, provides notifications when new grades go up, calculates GPA and much more! \nCurrently has over 1000 active users.`} 
         RepoName="GradeViewApp"
         serverCode="https://github.com/KihtrakRaknas/GradeView"
         page="https://gradeview.kihtrak.com/" 
@@ -28,12 +16,77 @@ export const Projects = [
         types={["iOS App","Andriod App","Server"]}
         key="GradeView - iOS and Andriod App"
     />,
+    <ProjectCard 
+        title="Scoutr - A Robotics Scouting Tool" 
+        img={require('./Imgs/scoutr.PNG')} 
+        cloudImg="scoutr"
+        description={`A mobile-first tool for robotics competitions. Simply enter your name and team number. The app will automatically find the competitions you are signed up for and display them. It will show you all the teams at the competition, and allow you to take notes and sync them accross your team member's devices. The app will also retrive other useful information like a team's "skills" score and past awards. All the data gets saved offline incase the internet at a competition is spotty.`} 
+        project="https://kihtrak.com/scoutr/"
+        code="https://github.com/KihtrakRaknas/scoutr"
+        RepoName="scoutr"
+        iOSDownload="https://apps.apple.com/tc/app/robotics-scouting-tool/id1494612234"
+        androidDownload="https://play.google.com/store/apps/details?id=com.kihtrak.scouter"
+        tools={["Firebase Cloud Firestore","Expo API","VexDB"]} 
+        languages={["JavaScript","React Native"]}
+        types={["iOS App","Andriod App","Website"]}
+    />,
+    <ProjectCard 
+        title="Space Shooter - Star Fox Style VR Game" 
+        img={require('./Imgs/starFox.PNG')} 
+        cloudImg="starFox"
+        firstMonth="January"
+        firstYear="2020"
+        lastMonth="February"
+        lastYear="2020"
+        description={`You will need a Steam VR compatitable head set and a controller to use this program. This game has you flying through space at ever increasing speeds while firing missles and dodging obsticles.`} 
+        download="https://github.com/KihtrakRaknas/Star-Fox-VR/raw/master/PC%20Build.zip"
+        code="https://github.com/KihtrakRaknas/Star-Fox-VR"
+        RepoName="Star-Fox-VR"
+        tools={["Unity","Steam VR"]} 
+        languages={["C#"]}
+        types={["PC Program", "Virtual Reality"]}
+    />,
+    <ProjectCard 
+        title="Mr. Poot"
+        RepoName="Mr.-Poot-App"
+        img={require('./Imgs/mrPoot.png')}
+        cloudImg="mrPoot"
+        description="An app for a chemistry teacher at SBHS. It contains chemistry notes, pictures and videos. (Commissioned by Mr. Poot himself)"
+        firstMonth="November"
+        lastMonth="December"
+        firstYear="2019"
+        lastYear="2019"
+        code="https://github.com/KihtrakRaknas/Mr.-Poot-App"
+        additionalCode="https://github.com/KihtrakRaknas/Mr.-Poot-Scraper"
+        iOSDownload="https://apps.apple.com/us/app/mister-poot/id1490529423?mt=8"
+        androidDownload="https://play.google.com/store/apps/details?id=com.kihtrak.misterpoot"
+        tools={["Expo API"]} 
+        languages={["JavaScript","React Native"]}
+        types={["iOS App","Andriod App"]}
+        key="Mr. Poot"
+    />,
+    <ProjectCard
+        img={require('./Imgs/NHSStaffFeedback.png')} 
+        cloudImg="NHSStaffFeedback"
+        title="NHS Staff Feedback Form"
+        description="A website commissioned by my school's National Honors Society to get feedback about students who are applying. Signing into the site will require a @sbschools.org email (to prove you are a staff member)." 
+        firstMonth="December"
+        lastMonth="December"
+        firstYear="2019"
+        lastYear="2019"
+        project="https://nhs-staff-feedback.github.io"
+        code="https://github.com/nhs-staff-feedback/nhs-staff-feedback.github.io"
+        tools={["Firebase Realtime Database"]} 
+        languages={["JavaScript","HTML","CSS"]}
+        types={["Website"]}
+        key="NHSStaffFeedback"
+    />,
     <ProjectCard
         title="REDirector"
         img={require('./Imgs/red.PNG')} 
         cloudImg="red"
         RepoName="RED" 
-        project="http://red.kihtrak.com"
+        project="https://red.kihtrak.com"
         tools={["Firebase Realtime Database"]} 
         languages={["JavaScript","HTML","CSS"]}
         lastMonth="February"
@@ -51,7 +104,7 @@ export const Projects = [
         types={["Website"]}
         key="Potato Co."
     />,
-    <ProjectCard 
+    /*<ProjectCard 
         title="Old Homepage"
         img={require('./Imgs/old.PNG')} 
         cloudImg="old"
@@ -65,7 +118,7 @@ export const Projects = [
         languages={["JavaScript","HTML","CSS"]}
         types={["Website"]}
         key="Old Homepage"
-    />,
+    />,*/
     <ProjectCard 
         title="Quick Set Up"
         img={require('./Imgs/setup.PNG')} 
@@ -118,48 +171,37 @@ export const Projects = [
         key="750S Team Website"
     />,
     <ProjectCard
-        title="3D-Maze"
-        RepoName="3D-Maze"
-        project="https://github.com/KihtrakRaknas/3D-Maze/archive/master.zip"
-        img={require('./Imgs/maze.png')}
-        cloudImg="maze"
-        languages={["Java"]}
-        key="3D-Maze"
-    />,
-    <ProjectCard 
-        title="Mr. Poot"
-        RepoName="Mr.-Poot-App"
-        img={require('./Imgs/mrPoot.png')}
-        cloudImg="mrPoot"
-        description="An app for a chemistry teacher at SBHS. It contains chemistry notes, pictures and videos. (Commissioned by Mr. Poot himself)"
-        firstMonth="November"
-        lastMonth="December"
-        firstYear="2019"
-        lastYear="2019"
-        code="https://github.com/KihtrakRaknas/Mr.-Poot-App"
-        additionalCode="https://github.com/KihtrakRaknas/Mr.-Poot-Scraper"
-        iOSDownload="https://apps.apple.com/us/app/mister-poot/id1490529423?mt=8"
-        androidDownload="https://play.google.com/store/apps/details?id=com.kihtrak.misterpoot"
-        tools={["Expo API"]} 
-        languages={["JavaScript","React Native"]}
-        types={["iOS App","Andriod App"]}
-        key="Mr. Poot"
-    />,
-    <ProjectCard
-        img={require('./Imgs/NHSStaffFeedback.png')} 
-        cloudImg="NHSStaffFeedback"
-        title="NHS Staff Feedback Form"
-        description="A website commissioned by my school's National Honors Society to get feedback about students who are applying. Signing into the site will require a @sbschools.org email (to prove you are a staff member)." 
+        img={require('./Imgs/ninjaEvaluation.PNG')} 
+        cloudImg="ninjaEvaluation"
+        title="Ninja Evaluator"
+        RepoName="Ninja-Evaluation"
         firstMonth="December"
-        lastMonth="December"
         firstYear="2019"
-        lastYear="2019"
-        project="https://nhs-staff-feedback.github.io"
-        code="https://github.com/nhs-staff-feedback/nhs-staff-feedback.github.io"
+        lastMonth="January"
+        lastYear="2020"
+        description="An online tracker for staff use. Tracks each student's belt, projects, age, login information, last belt up and other useful information. (Requires whitelisted email to access)"
+        project="https://ninjaeval.kihtrak.com"
+        code="https://github.com/KihtrakRaknas/Ninja-Evaluation"
         tools={["Firebase Realtime Database"]} 
         languages={["JavaScript","HTML","CSS"]}
-        types={["Website"]}
-        key="NHSStaffFeedback"
+        types={["Website","Work - Code Ninjas"]}
+        key="ninjaEvaluation"
+    />,
+    <ProjectCard 
+        title="Cannon Demo" 
+        img={require('./Imgs/cannon.PNG')} 
+        cloudImg="cannon"
+        firstMonth="October"
+        firstYear="2019"
+        lastMonth="October"
+        lastYear="2019"
+        description={`A simple Unity project that lets you shoot chairs at tables.`} 
+        download="https://github.com/KihtrakRaknas/Cannon-Demo/raw/master/PC%20Build.zip"
+        code="https://github.com/KihtrakRaknas/Cannon-Demo"
+        RepoName="Cannon-Demo"
+        tools={["Unity"]} 
+        languages={["C#"]}
+        types={["PC Program"]}
     />,
     <ProjectCard
         img={require('./Imgs/oldRoboticsPortfolio.PNG')} 
@@ -233,6 +275,16 @@ export const Projects = [
         tools={["PROS"]}
         types={["Vex V5 Brain"]}
         key="Senior Year Robot Code"
+    />,
+    <ProjectCard
+        title="3D-Maze"
+        RepoName="3D-Maze"
+        description={`A maze created with Java and the swing library. Uses "fake 3D" like Doom.`}
+        project="https://github.com/KihtrakRaknas/3D-Maze/archive/master.zip"
+        img={require('./Imgs/maze.png')}
+        cloudImg="maze"
+        languages={["Java"]}
+        key="3D-Maze"
     />,
     <ProjectCard
         img={require('./Imgs/myAwesomeStudio.png')} 
@@ -344,36 +396,34 @@ export const Projects = [
         types={["Website","Work - Code Ninjas"]}
         key="NinjaBucks"
     />,
-    <ProjectCard
-        img={require('./Imgs/ninjaEvaluation.PNG')} 
-        cloudImg="ninjaEvaluation"
-        title="Ninja Evaluator"
-        RepoName="Ninja-Evaluation"
-        firstMonth="December"
+    <ProjectCard 
+        title="Top Down Shooter" 
+        img={require('./Imgs/topDownShooter.PNG')} 
+        cloudImg="topDownShooter"
+        firstMonth="November"
         firstYear="2019"
-        lastMonth="January"
-        lastYear="2020"
-        description="An online tracker for staff use. Tracks each student's belt, projects, age, login information, last belt up and other useful information. (Requires whitelisted email to access)"
-        project="https://ninjaeval.kihtrak.com"
-        code="https://github.com/KihtrakRaknas/Ninja-Evaluation"
-        tools={["Firebase Realtime Database"]} 
-        languages={["JavaScript","HTML","CSS"]}
-        types={["Website","Work - Code Ninjas"]}
-        key="ninjaEvaluation"
+        lastMonth="November"
+        lastYear="2019"
+        description={`A top down shooter style game`} 
+        download="https://github.com/KihtrakRaknas/Top-Down-Shooter/raw/master/PC%20Build.zip"
+        code="https://github.com/KihtrakRaknas/Top-Down-Shooter"
+        RepoName="Top-Down-Shooter"
+        tools={["Unity"]} 
+        languages={["C#"]}
+        types={["PC Program"]}
     />,
     <ProjectCard 
-        title="Scoutr - A Robotics Scouting Tool" 
-        //img={require('./Imgs/Karthik-compressed.jpg')} 
-        //cloudImg="Karthik-small"
-        description={`A mobile-first tool for robotics competitions. Simply enter your name and team number. The app will automatically find the competitions you are signed up for and display them. It will show you all the teams at the competition, and allow you to take notes and sync them accross your team member's devices. The app will also retrive other useful information like a team's "skills" score and past awards. All the data gets saved offline incase the internet at a competition is spotty.`} 
-        project="https://kihtrak.com/scoutr/"
-        code="https://github.com/KihtrakRaknas/scoutr"
-        RepoName="scoutr"
-        iOSDownload="https://apps.apple.com/tc/app/robotics-scouting-tool/id1494612234"
-        androidDownload="https://play.google.com/store/apps/details?id=com.kihtrak.scouter"
-        tools={["Firebase Cloud Firestore","Expo API","VexDB"]} 
-        languages={["JavaScript","React Native"]}
-        types={["iOS App","Andriod App","Website"]}
+        title="Kihtrak.com" 
+        img={require('./Imgs/Karthik-compressed.jpg')} 
+        cloudImg="Karthik-small"
+        description="A compilation of my projects! The website you are viewing right now" 
+        project="https://kihtrak.com"
+        code="https://github.com/KihtrakRaknas/KihtrakRaknas.github.io"
+        RepoName="KihtrakRaknas.github.io"
+        GithubBranch="Source"
+        languages={["React","JavaScript","HTML","CSS"]}
+        types={["Website","Portfolio"]}
+        key="Kihtrak.com"
     />,
 ];
 /*
