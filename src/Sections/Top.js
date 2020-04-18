@@ -14,7 +14,7 @@ export default class Top extends React.Component {
                 strength={-300}
             >
                 <div style={{ height: '100vh' }} >
-                    <Parallax centered={true} className="center-vert" speed={10} style={{fontSize:"10vh",color:"black", fontWeight: "bold"}}><ReactRotatingText items={['Karthik Sankar', 'Kihtrak Raknas']} /></Parallax>
+                    <Parallax centered={true} className="center-vert" percentage={window.outerHeight>700?.1:window.outerHeight>620?.1:.3} speed={-3} style={{fontSize:"10vh",color:"black", fontWeight: "bold"}}><ReactRotatingText items={window.outerWidth/window.outerHeight>=.8?['Karthik Sankar', 'Kihtrak Raknas']:['Karthik', 'Kihtrak']} /></Parallax>
                 </div>
             </ImgPara>
         );

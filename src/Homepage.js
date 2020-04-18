@@ -10,11 +10,12 @@ const AroundTheWeb = React.lazy(() => import('./Sections/AroundTheWeb'));
 
 export default class Homepage extends React.Component {
     state = {showProjects:false}
-    componentDidMount = () => [
+    componentDidMount = () => {
         window.addEventListener('scroll', this.handleScroll)
-    ]
+    }
 
     handleScroll = () =>{
+
         if(!this.state.showProjects && window.innerHeight*2>document.getElementById('Projects').getBoundingClientRect().top)
             this.setState({showProjects:true})
     }
@@ -38,7 +39,7 @@ export default class Homepage extends React.Component {
                         </div>
                     </div>
                 </nav>
-                <div className="container-fluid">
+                <div className="container-fluid" >
                     <h1 className="display-1 text-center">Karthik Sankar</h1>
                     <br/>
                     <br/>
