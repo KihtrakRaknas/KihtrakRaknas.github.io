@@ -21,14 +21,14 @@ export default class ProjectsPage extends React.Component {
       sortBtns = ()=>{
             return(                        
             <div className="btn-group btn-group-toggle mt-2" data-toggle="buttons">
-                <label className="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("original-order",this.state.reverseSort)}}>
-                    <input type="radio" name="options" id="option1" autoComplete="off"/> Default
+                <label className="btn btn-secondary active" onClick={()=>{this.masonry.current.setSort("original-order",this.state.reverseSort)}}>
+                    <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked/> Default
                 </label>
                 <label className="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("start",this.state.reverseSort)}}>
                     <input type="radio" name="options" id="option2" autoComplete="off"/> Date Created
                 </label>
-                <label className="btn btn-secondary active" onClick={()=>{this.masonry.current.setSort("end",this.state.reverseSort)}}>
-                    <input type="radio" name="options" id="option3" autoComplete="off" defaultChecked/> Date Finished
+                <label className="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("end",this.state.reverseSort)}}>
+                    <input type="radio" name="options" id="option3" autoComplete="off"/> Date Finished
                 </label>
             </div>
             )

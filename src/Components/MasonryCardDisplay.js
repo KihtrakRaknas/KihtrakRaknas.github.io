@@ -66,10 +66,6 @@ export default class MasonryCardDisplay extends React.Component {
                             return Infinity;
                         },
                     },
-                    sortBy: "end",
-                    sortAscending: {
-                        end:false
-                    }
                   })
             });
             console.log("mansonry - isotope set up")
