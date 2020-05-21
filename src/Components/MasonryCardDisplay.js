@@ -17,7 +17,7 @@ export default class MasonryCardDisplay extends React.Component {
     render() {
         console.log("mansonry - rendering")
         return(
-            <div className="item-grid" style={{overflowX: "hidden"}}>
+            <div className="item-grid" style={{overflowX: "hidden",overflowY: "hidden"}}>
                 {this.props.children.map((childa)=>{
                     var {...other} = childa.props
                     return(
@@ -66,6 +66,10 @@ export default class MasonryCardDisplay extends React.Component {
                             return Infinity;
                         },
                     },
+                    sortBy: "end",
+                    sortAscending: {
+                        end:false
+                    }
                   })
             });
             console.log("mansonry - isotope set up")

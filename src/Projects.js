@@ -129,6 +129,36 @@ export const Projects = [
         key="Quick Set Up"
     />,
     <ProjectCard 
+        title="A Lack Of Clarity"
+        img={require('./Imgs/aLackOfClarity.PNG')} 
+        cloudImg="aLackOfClarity"
+        RepoName="clarity"
+        description="A blog where talented teen writers share original works. This projected started as a fun quarentine challenge but it has become a large library of high quality works."
+        project="https://kihtrak.com/clarity/"
+        languages={["React","JavaScript","HTML","CSS"]}
+        firstMonth="April"
+        firstYear="2020"
+        tools={["Firebase Realtime Database", "WordPress API"]} 
+        types={["Website"]}
+        key="A Lack Of Clarity"
+    />,
+    <ProjectCard 
+        title="cloud_variable"
+        //img={require('./Imgs/setup.PNG')} 
+        //cloudImg="setup"
+        RepoName="cloud_variable"
+        project="https://kihtrak.com/cloud_variable/"
+        serverCode="https://github.com/KihtrakRaknas/cloud_variable-server/"
+        languages={["JavaScript","HTML","CSS","Node.js"]}
+        firstMonth="May"
+        firstYear="2020"
+        lastMonth="May"
+        lastYear="2020"
+        tools={["Firebase Realtime Database"]} 
+        types={["Website","Server"]}
+        key="A Lack Of Clarity"
+    />,
+    <ProjectCard 
         title="Basic Calculator"
         RepoName="Calculator"
         img={require('./Imgs/calculator.png')}
