@@ -143,6 +143,21 @@ export const Projects = [
         key="A Lack Of Clarity"
     />,
     <ProjectCard 
+        title="POPs Informational Website"
+        img={require('./Imgs/POPs.PNG')} 
+        cloudImg="POPs"
+        RepoName="POPs"
+        description="POPs are Persistent Organic Pollutants. I was given the responsibily to design a website about POPs as head programmer for the NJIT Chemistry Olympics. The site has some cool custom react components and custom animations."
+        project="https://kihtrak.com/POPs/"
+        languages={["React","JavaScript","HTML","CSS"]}
+        firstMonth="May"
+        firstYear="2020"
+        lastMonth="May"
+        lastYear="2020"
+        types={["Website"]}
+        key="POPs informational website"
+    />,
+    <ProjectCard 
         title="cloud_variable"
         //img={require('./Imgs/setup.PNG')} 
         //cloudImg="setup"
@@ -253,8 +268,8 @@ export const Projects = [
     <ProjectCard
         img={require('./Imgs/newRoboticsPortfolio.png')} 
         cloudImg="newRoboticsPortfolio"
-        title="Robotic's Portfolio from Junior year"
-        description="My old Robotic's Portfolio from Sophomore year. It features some of the highlights of the code I wrote that season. There is a little easter egg if you have my friend's portfolio open at the same time as mine (which is why firebase was used)." 
+        title="Robotics Portfolio from Junior year"
+        description="My old Robotics Portfolio from Sophomore year. It features some of the highlights of the code I wrote that season. There is a little easter egg if you have my friend's portfolio open at the same time as mine (which is why firebase was used)." 
         RepoName="Robotics-Portfolio-2.0"
         firstMonth="April"
         firstYear="2019"

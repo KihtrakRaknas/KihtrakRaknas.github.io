@@ -74,7 +74,9 @@ export default class AroundTheWeb extends React.Component {
                 <p className="text-center txtAroundWeb">Select the icon which most closely resembles: <strong>{this.answer}</strong></p>
                     <p className="text-center" style={{fontSize:"10vw"}}>{emojis}</p>
                 </div>}
-                {this.state.captcha?<Tada><p className="email text-center">Email me at: <a href={"mailto:"+this.state.email+"@kihtrak.com"}>{this.state.email}@kihtrak.com</a></p></Tada>:<p className="email text-center">Please complete this custom captcha to view contact information</p>}
+                <div style={{overflowX:"hidden"}}>
+                    {this.state.captcha?<Tada><p className="email text-center">Email me at: <a href={"mailto:"+this.state.email+"@kihtrak.com"}>{this.state.email}@kihtrak.com</a></p></Tada>:<p className="email text-center">Please complete this custom captcha to view contact information</p>}
+                </div>
             </div>
         );
     }
