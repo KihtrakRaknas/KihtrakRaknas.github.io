@@ -82,7 +82,7 @@ export default class AboutMe extends React.Component {
                             <p className="about-txt">Full-stack developer</p>
                             <p className="about-txt">Fluent in HTML, CSS, Javascript, Node.js, Java & C++</p>
                             <p className="about-txt">Favorite frameworks: React & React Native</p>
-                            <p className="about-txt">Favorite editors: Andriod Studio, Visual Studio Code & Xcode</p>
+                            <p className="about-txt">Favorite editors: Android Studio, Visual Studio Code & Xcode</p>
                         </Slide>
                     </div>
                 </div>

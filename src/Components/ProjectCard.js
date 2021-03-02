@@ -8,25 +8,17 @@ import {Image, Transformation} from 'cloudinary-react';
 export default class ProjectCard extends React.Component {
     constructor(props){
         super(props)
-        var botPattern = "(googlebot\/|bot|Googlebot-Mobile|Googlebot-Image|Google favicon|Mediapartners-Google|bingbot|slurp|java|wget|curl|Commons-HttpClient|Python-urllib|libwww|httpunit|nutch|phpcrawl|msnbot|jyxobot|FAST-WebCrawler|FAST Enterprise Crawler|biglotron|teoma|convera|seekbot|gigablast|exabot|ngbot|ia_archiver|GingerCrawler|webmon |httrack|webcrawler|grub.org|UsineNouvelleCrawler|antibot|netresearchserver|speedy|fluffy|bibnum.bnf|findlink|msrbot|panscient|yacybot|AISearchBot|IOI|ips-agent|tagoobot|MJ12bot|dotbot|woriobot|yanga|buzzbot|mlbot|yandexbot|purebot|Linguee Bot|Voyager|CyberPatrol|voilabot|baiduspider|citeseerxbot|spbot|twengabot|postrank|turnitinbot|scribdbot|page2rss|sitebot|linkdex|Adidxbot|blekkobot|ezooms|dotbot|Mail.RU_Bot|discobot|heritrix|findthatfile|europarchive.org|NerdByNature.Bot|sistrix crawler|ahrefsbot|Aboundex|domaincrawler|wbsearchbot|summify|ccbot|edisterbot|seznambot|ec2linkfinder|gslfbot|aihitbot|intelium_bot|facebookexternalhit|yeti|RetrevoPageAnalyzer|lb-spider|sogou|lssbot|careerbot|wotbox|wocbot|ichiro|DuckDuckBot|lssrocketcrawler|drupact|webcompanycrawler|acoonbot|openindexspider|gnam gnam spider|web-archive-net.com.bot|backlinkcrawler|coccoc|integromedb|content crawler spider|toplistbot|seokicks-robot|it2media-domain-crawler|ip-web-crawler.com|siteexplorer.info|elisabot|proximic|changedetection|blexbot|arabot|WeSEE:Search|niki-bot|CrystalSemanticsBot|rogerbot|360Spider|psbot|InterfaxScanBot|Lipperhey SEO Service|CC Metadata Scaper|g00g1e.net|GrapeshotCrawler|urlappendbot|brainobot|fr-crawler|binlar|SimpleCrawler|Livelapbot|Twitterbot|cXensebot|smtbot|bnf.fr_bot|A6-Indexer|ADmantX|Facebot|Twitterbot|OrangeBot|memorybot|AdvBot|MegaIndex|SemanticScholarBot|ltx71|nerdybot|xovibot|BUbiNG|Qwantify|archive.org_bot|Applebot|TweetmemeBot|crawler4j|findxbot|SemrushBot|yoozBot|lipperhey|y!j-asr|Domain Re-Animator Bot|AddThis)";
-        var re = new RegExp(botPattern, 'i');
+        var re = new RegExp("(googlebot\/|bot|Googlebot-Mobile|Googlebot-Image|Google favicon|Mediapartners-Google|bingbot|slurp|java|wget|curl|Commons-HttpClient|Python-urllib|libwww|httpunit|nutch|phpcrawl|msnbot|jyxobot|FAST-WebCrawler|FAST Enterprise Crawler|biglotron|teoma|convera|seekbot|gigablast|exabot|ngbot|ia_archiver|GingerCrawler|webmon |httrack|webcrawler|grub.org|UsineNouvelleCrawler|antibot|netresearchserver|speedy|fluffy|bibnum.bnf|findlink|msrbot|panscient|yacybot|AISearchBot|IOI|ips-agent|tagoobot|MJ12bot|dotbot|woriobot|yanga|buzzbot|mlbot|yandexbot|purebot|Linguee Bot|Voyager|CyberPatrol|voilabot|baiduspider|citeseerxbot|spbot|twengabot|postrank|turnitinbot|scribdbot|page2rss|sitebot|linkdex|Adidxbot|blekkobot|ezooms|dotbot|Mail.RU_Bot|discobot|heritrix|findthatfile|europarchive.org|NerdByNature.Bot|sistrix crawler|ahrefsbot|Aboundex|domaincrawler|wbsearchbot|summify|ccbot|edisterbot|seznambot|ec2linkfinder|gslfbot|aihitbot|intelium_bot|facebookexternalhit|yeti|RetrevoPageAnalyzer|lb-spider|sogou|lssbot|careerbot|wotbox|wocbot|ichiro|DuckDuckBot|lssrocketcrawler|drupact|webcompanycrawler|acoonbot|openindexspider|gnam gnam spider|web-archive-net.com.bot|backlinkcrawler|coccoc|integromedb|content crawler spider|toplistbot|seokicks-robot|it2media-domain-crawler|ip-web-crawler.com|siteexplorer.info|elisabot|proximic|changedetection|blexbot|arabot|WeSEE:Search|niki-bot|CrystalSemanticsBot|rogerbot|360Spider|psbot|InterfaxScanBot|Lipperhey SEO Service|CC Metadata Scaper|g00g1e.net|GrapeshotCrawler|urlappendbot|brainobot|fr-crawler|binlar|SimpleCrawler|Livelapbot|Twitterbot|cXensebot|smtbot|bnf.fr_bot|A6-Indexer|ADmantX|Facebot|Twitterbot|OrangeBot|memorybot|AdvBot|MegaIndex|SemanticScholarBot|ltx71|nerdybot|xovibot|BUbiNG|Qwantify|archive.org_bot|Applebot|TweetmemeBot|crawler4j|findxbot|SemrushBot|yoozBot|lipperhey|y!j-asr|Domain Re-Animator Bot|AddThis)", 'i');
         var userAgent = navigator.userAgent; 
-        this.state = {
-
-        }
-        if (re.test(userAgent)) {
-            this.state = {noCloudImg:true}
-        }
-
+        this.noCloudImg = re.test(userAgent)
+        this.state={}
     }
+    
     componentWillMount(){
         if(this.props.RepoName){
             if(!this.props.lastMonth||!this.props.lastYear){
                 let lastDateLink = `https://api.github.com/repos/${this.props.GithubUsername?this.props.GithubUsername:"KihtrakRaknas"}/${this.props.RepoName}/branches/${this.props.GithubBranch?this.props.GithubBranch:"master"}`
-                fetch(
-                    !this.state.noCloudImg?lastDateLink:'https://wordpress-redirect.herokuapp.com/?url='+encodeURIComponent(lastDateLink)
-                )
-                .then(response => {
+                fetch(!this.noCloudImg?lastDateLink:'https://wordpress-redirect.herokuapp.com/?url='+encodeURIComponent(lastDateLink)).then(response => {
                     response.json().then(json => {
                         if(!json.message){
                             this.setState({
@@ -37,17 +29,11 @@ export default class ProjectCard extends React.Component {
                             console.log("setState - github end time - "+this.props.title)
                         }
                     });
-                })
-                .catch(error => {
-                    //console.log(error);
-                });
+                }).catch(error => {console.log(error)})
             }
             if(!this.props.firstMonth||!this.props.firstYear||!this.props.description||!this.props.title||!this.props.code){
                 let firstDateLink = `https://api.github.com/repos/${this.props.GithubUsername?this.props.GithubUsername:"KihtrakRaknas"}/${this.props.RepoName}`
-                fetch(
-                    !this.state.noCloudImg?firstDateLink:'https://wordpress-redirect.herokuapp.com/?url='+encodeURIComponent(firstDateLink)
-                )
-                .then(response => {
+                fetch(!this.noCloudImg?firstDateLink:'https://wordpress-redirect.herokuapp.com/?url='+encodeURIComponent(firstDateLink)).then(response => {
                     response.json().then(json => {
                         if(!json.message){
                             this.setState({
@@ -67,10 +53,7 @@ export default class ProjectCard extends React.Component {
                                 code: `https://api.github.com/repos/${this.props.GithubUsername?this.props.GithubUsername:"KihtrakRaknas"}/${this.props.RepoName}`,
                             });
                     });
-                })
-                .catch(error => {
-                    //console.log(error);
-                });
+                }).catch(error => {console.log(error)})
             }
         }
     }
@@ -181,7 +164,6 @@ export default class ProjectCard extends React.Component {
             backgoundColor = "#00749C"
             color="white"
         }
-        
         return(
             <span key={name} className="badge" style={{marginRight:"5px", backgroundColor:backgoundColor, color:color}}>{icon} {name}</span>
         )
@@ -265,7 +247,7 @@ export default class ProjectCard extends React.Component {
         let btnSize = !!this.props.project&&!!this.props.page&&(this.props.code||this.state.code)&&window.innerWidth<420?"btn-sm":""
         return(
             <div className="card" data-filter={JSON.stringify(filterTerms)} style={this.props.width?{width:(this.props.width-20*(columns-1))/columns}:null}>
-                {this.props.cloudImg&!this.state.noCloudImg?<Image cloudName="kihtrak" publicId={this.props.cloudImg} secure="true" className="card-img-top" dpr="auto" responsive width="auto" alt={`Thumbnail for ${this.props.title?this.props.title:this.state.title}`} /*this part might not do anything*/onLoad={this.componentDidUpdate} onError={this.componentDidUpdate}><Transformation fetchFormat="auto"/></Image>:imgSrc?<img onLoad={this.componentDidUpdate} onError={this.componentDidUpdate} className="card-img-top" src={imgSrc} alt={`Thumbnail for ${this.props.title?this.props.title:this.state.title}`}/>:null}
+                {this.props.cloudImg&!this.noCloudImg?<Image cloudName="kihtrak" publicId={this.props.cloudImg} secure="true" className="card-img-top" dpr="auto" responsive width="auto" alt={`Thumbnail for ${this.props.title?this.props.title:this.state.title}`} /*this part might not do anything*/onLoad={this.componentDidUpdate} onError={this.componentDidUpdate}><Transformation fetchFormat="auto"/></Image>:imgSrc?<img onLoad={this.componentDidUpdate} onError={this.componentDidUpdate} className="card-img-top" src={imgSrc} alt={`Thumbnail for ${this.props.title?this.props.title:this.state.title}`}/>:null}
                 <div className="card-body">
                     <h4 className="card-title">{this.props.title?this.props.title:this.state.title}</h4>
                     {firstYear||firstMonth||lastYear||lastMonth?firstYear===lastYear&&firstMonth===lastMonth?<h6 className="card-subtitle mb-2 text-muted time" data-start={start} data-end={end}>{firstMonth} {firstYear}</h6>:<h6 className="card-subtitle mb-2 text-muted time" data-start={start} data-end={end}>{firstMonth} {firstYear} - {lastMonth} {lastYear}</h6>:null}
