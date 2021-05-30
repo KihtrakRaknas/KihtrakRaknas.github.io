@@ -98,11 +98,11 @@ export default class ProjectCard extends React.Component {
             icon = <FontAwesomeIcon icon={faGlobe}/>
         }else if(name === "Server"){
             icon = <FontAwesomeIcon icon={faServer}/>
-        }else if(name==="Andriod App"){
+        }else if(name==="Android App"){
             icon = <FontAwesomeIcon icon={faGooglePlay}/>
             backgoundColor="#3BCCFF"
             color="white"
-        }else if(name&&name.includes("Andriod")){
+        }else if(name&&name.includes("Android")){
             icon = <FontAwesomeIcon icon={faAndroid}/>
             backgoundColor="#a4c639"
             color="black"

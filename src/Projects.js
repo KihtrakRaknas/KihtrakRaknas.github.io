@@ -4,8 +4,8 @@ export const Projects = [
     <ProjectCard 
         img={require('./Imgs/gradeView.PNG')} 
         cloudImg="gradeView"
-        title="GradeView - iOS and Andriod App"
-        description={`An app that provides SBHS students with access to their grades, provides notifications when new grades go up, calculates GPA and much more! \nCurrently has over 1000 active users.`} 
+        title="GradeView - iOS and Android App"
+        description={`An app that provides students with access to their grades, provides notifications when new grades go up, calculates GPA and much more! \nCurrently has over 1000 active users and supports over 3 school districts.`} 
         RepoName="GradeViewApp"
         serverCode="https://github.com/KihtrakRaknas/GradeView"
         page="https://gradeview.kihtrak.com/" 
@@ -13,8 +13,23 @@ export const Projects = [
         androidDownload="https://play.google.com/store/apps/details?id=com.kihtrak.REGEN"
         tools={["Firebase Cloud Firestore","Google Cloud Functions","Expo API"]} 
         languages={["JavaScript","React Native","Node.js"]}
-        types={["iOS App","Andriod App","Server"]}
-        key="GradeView - iOS and Andriod App"
+        types={["iOS App","Android App","Server"]}
+        key="GradeView - iOS and Android App"
+    />,
+    <ProjectCard 
+        img={require('./Imgs/NotiBot.png')} 
+        cloudImg="NotiBot"
+        title="NotiBot - iOS/Android/Web App"
+        description={`An app that provides SBHS students with access to their grades, provides notifications when new grades go up, calculates GPA and much more! \nCurrently has over 1000 active users.`} 
+        RepoName="NotiBot"
+        serverCode="https://github.com/KihtrakRaknas/NotiBot-Server"
+        page="https://notibotdocs.kihtrak.com/" 
+        iOSDownload="https://apps.apple.com/us/app/notibot/id1568618783?mt=8"
+        androidDownload="https://play.google.com/store/apps/details?id=com.kihtrak.NOTIBOT"
+        tools={["Firebase Cloud Firestore","Expo API"]} 
+        languages={["JavaScript","React Native","Node.js"]}
+        types={["iOS App","Android App","Server","Website"]}
+        key="NotiBot - iOS/Android/Web App"
     />,
     <ProjectCard 
         title="Scoutr - A Robotics Scouting Tool" 
@@ -28,7 +43,7 @@ export const Projects = [
         androidDownload="https://play.google.com/store/apps/details?id=com.kihtrak.scouter"
         tools={["Firebase Cloud Firestore","Expo API","VexDB"]} 
         languages={["JavaScript","React Native"]}
-        types={["iOS App","Andriod App","Website"]}
+        types={["iOS App","Android App","Website"]}
     />,
     <ProjectCard 
         title="Space Shooter - Star Fox Style VR Game" 
@@ -62,7 +77,7 @@ export const Projects = [
         androidDownload="https://play.google.com/store/apps/details?id=com.kihtrak.misterpoot"
         tools={["Expo API"]} 
         languages={["JavaScript","React Native"]}
-        types={["iOS App","Andriod App"]}
+        types={["iOS App","Android App"]}
         key="Mr. Poot"
     />,
     <ProjectCard
@@ -181,8 +196,8 @@ export const Projects = [
         code="https://github.com/KihtrakRaknas/Calculator"
         androidDownload="https://play.google.com/store/apps/details?id=com.kihtrak.calculator"
         languages={["Java"]}
-        tools={["Andriod Studio"]}
-        types={["Andriod App"]}
+        tools={["Android Studio"]}
+        types={["Android App"]}
         firstMonth="October"
         lastMonth="October"
         firstYear="2018"
@@ -391,7 +406,7 @@ export const Projects = [
         code="https://github.com/KihtrakRaknas/SmartBottleApp"
         additionalCode="https://github.com/evelyn-fu/SmartBottlePi"
         languages={["JavaScript","React Native","Node.js","Python","C++"]}
-        types={["Hackathon Project","iOS App","Andriod App","Arduino","Raspberry Pi"]}
+        types={["Hackathon Project","iOS App","Android App","Arduino","Raspberry Pi"]}
         key="Smart Bottle"
     />,
     <ProjectCard
@@ -474,7 +489,7 @@ export const Projects = [
 /*
     <ProjectCard
         img={require('./Imgs/Karthik-compressed.jpg')} 
-        title="GradeView - iOS and Andriod App"
+        title="GradeView - iOS and Android App"
         description="A compilation of my projects! The website you are viewing right now" 
         RepoName="GradeViewApp"
         GithubBranch="Source"
@@ -486,6 +501,6 @@ export const Projects = [
         androidDownload="https://play.google.com/store/apps/details?id=com.kihtrak.REGEN"
         tools={["Firebase Cloud Firestore","Google Cloud Functions","Expo API"]} 
         languages={["JavaScript","React Native","Node.js"]}
-        types={["iOS App","Andriod App","Server"]}
+        types={["iOS App","Android App","Server"]}
     />,
 */

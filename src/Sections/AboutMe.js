@@ -2,7 +2,7 @@ import React from 'react';
 import Bounce from 'react-reveal/Bounce';
 import Jump from 'react-reveal/Jump';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSchool ,faSearchLocation, faBriefcase , faRobot, faLaptopCode} from '@fortawesome/free-solid-svg-icons'
+import { faSchool ,faSearchLocation, faBriefcase , faRobot, faLaptopCode, faBook } from '@fortawesome/free-solid-svg-icons'
 import './AboutMe.css'
 import Zoom from 'react-reveal/Zoom';
 import Slide from 'react-reveal/Slide';
@@ -56,17 +56,17 @@ export default class AboutMe extends React.Component {
                         <Zoom left>
                             <div>
                                 <FontAwesomeIcon icon={faSearchLocation} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span className="icon-text">New Jersey</span>
+                                <span className="icon-text">New Jersey (South Brunswick)</span>
                             </div>
                             <br/>
                             <div>
                                 <FontAwesomeIcon icon={faSchool} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span className="icon-text">South Brunswick High School</span>
+                                <span className="icon-text">University Of Maryland - College Park</span>
                             </div>
                             <br/>
                             <div>
-                                <FontAwesomeIcon icon={faRobot} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span className="icon-text">Captain of <a href="http://750s.github.io">750S</a></span>
+                                <FontAwesomeIcon icon={faBook} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
+                                <span className="icon-text">Math and Computer Science Major</span>
                             </div>
                             <br/>
                             <div>
@@ -80,7 +80,7 @@ export default class AboutMe extends React.Component {
                         <Slide right>
                             <FontAwesomeIcon icon={faLaptopCode} size={Math.round(this.state.vmin/175)+"x"} style={{marginRight:"10px"}}/>
                             <p className="about-txt">Full-stack developer</p>
-                            <p className="about-txt">Fluent in HTML, CSS, Javascript, Node.js, Java & C++</p>
+                            <p className="about-txt">Fluent in HTML, CSS, Javascript, Java & C</p>
                             <p className="about-txt">Favorite frameworks: React & React Native</p>
                             <p className="about-txt">Favorite editors: Android Studio, Visual Studio Code & Xcode</p>
                         </Slide>
