@@ -44,46 +44,55 @@ export default class AboutMe extends React.Component {
         return(
             <div>
                 <br/>
-                <br/>
                 <Bounce bottom>
                     <h1 className="text-center display-2">About Me</h1>
                 </Bounce>
                 <Jump>
-                    
+                <br/>
                 </Jump>
                 <div className="row" style={{overflowX:'hidden'}}>
-                    <div className="col-md-6 text-center">
-                        <Zoom left>
-                            <div>
-                                <FontAwesomeIcon icon={faSearchLocation} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span className="icon-text">New Jersey (South Brunswick)</span>
-                            </div>
-                            <br/>
-                            <div>
-                                <FontAwesomeIcon icon={faSchool} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span className="icon-text">University Of Maryland - College Park</span>
-                            </div>
-                            <br/>
-                            <div>
-                                <FontAwesomeIcon icon={faBook} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span className="icon-text">Math and Computer Science Major</span>
-                            </div>
-                            <br/>
-                            <div>
-                                <FontAwesomeIcon icon={faBriefcase} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/>
-                                <span className="icon-text">Teach programming @ Code Ninjas</span>
-                            </div>
-                            <br/>
-                        </Zoom>
+                    <div className="col-md-6 px-4 px-sm-5">
+                        <table>
+                            <Zoom left>
+                                <tr>
+                                    <td><FontAwesomeIcon icon={faSearchLocation} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/></td>
+                                    <td className="icon-text">New Jersey (South Brunswick)</td>
+                                </tr>
+                                <br/>
+                                <tr>
+                                    <td><FontAwesomeIcon icon={faSchool} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/></td>
+                                    <td className="icon-text">University Of Maryland - College Park</td>
+                                </tr>
+                                <br/>
+                                <tr>
+                                    <td><FontAwesomeIcon icon={faBook} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/></td>
+                                    <td className="icon-text">    Math and Computer Science Major</td>
+                                </tr>
+                            </Zoom>
+                        </table>
+                        <br/>
                     </div>
-                    <div className="col-md-6 text-center">
-                        <Slide right>
-                            <FontAwesomeIcon icon={faLaptopCode} size={Math.round(this.state.vmin/175)+"x"} style={{marginRight:"10px"}}/>
-                            <p className="about-txt">Full-stack developer</p>
-                            <p className="about-txt">Fluent in HTML, CSS, Javascript, Java & C</p>
-                            <p className="about-txt">Favorite frameworks: React & React Native</p>
-                            <p className="about-txt">Favorite editors: Android Studio, Visual Studio Code & Xcode</p>
-                        </Slide>
+                    
+                    <div className="col-md-6 px-4 px-sm-5">
+                        <table>
+                            <Slide right >
+                                    <tr>
+                                        <td><FontAwesomeIcon icon={faBriefcase} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/></td>
+                                        <td className="icon-text">Full Time Student</td>
+                                    </tr>
+                                    <br/>
+                                    <tr>
+                                        <td><FontAwesomeIcon icon={faRobot} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/></td>
+                                        <td className="icon-text">Maker</td>
+                                    </tr>
+                                    <br/>
+                                    <tr>
+                                        <td><FontAwesomeIcon icon={faLaptopCode} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/></td>
+                                        <td className="icon-text">Full-stack developer</td>
+                                    </tr>
+                            </Slide>
+                        </table>
+                        <br/>
                     </div>
                 </div>
                 <div>
