@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f5e6c54df262e4c003d95c5a328313e6",
+    "revision": "8cf28babb1318c3ecadac9ac31177ddc",
     "url": "/index.html"
   },
   {
-    "revision": "c3a933ef9822728004f5",
-    "url": "/static/css/main.6c8888e8.chunk.css"
+    "revision": "87f86c1eeffd2bdec1ef",
+    "url": "/static/css/main.d0633bc0.chunk.css"
   },
   {
-    "revision": "96bb9f5f75ca323548d3",
-    "url": "/static/js/2.9ea90b97.chunk.js"
+    "revision": "17e54ae0d1c19d51d774",
+    "url": "/static/js/2.32df2cfd.chunk.js"
   },
   {
-    "revision": "d07541eb96904f8075aa83bab3c9c78b",
-    "url": "/static/js/2.9ea90b97.chunk.js.LICENSE.txt"
+    "revision": "7d875f185f025de5964aab11f04dce7e",
+    "url": "/static/js/2.32df2cfd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c3a933ef9822728004f5",
-    "url": "/static/js/main.cb16c862.chunk.js"
+    "revision": "87f86c1eeffd2bdec1ef",
+    "url": "/static/js/main.51bbcc15.chunk.js"
   },
   {
-    "revision": "90c3b0846a7511e6a03b",
-    "url": "/static/js/runtime-main.1bd03f27.js"
+    "revision": "da53d9dbd97741c1b847",
+    "url": "/static/js/runtime-main.c159b9bc.js"
   },
   {
     "revision": "06946839cb4aad486c00f775319290f3",
@@ -36,20 +36,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/ActualTrash.84ab8843.png"
   },
   {
-    "revision": "1b65926236d951b2af57201b275f595b",
-    "url": "/static/media/App_Store_Badge.1b659262.svg"
+    "revision": "2928664fe1fc6aca88583a6f606d60ba",
+    "url": "/static/media/App_Store_Badge.2928664f.svg"
+  },
+  {
+    "revision": "4b39caf8d8f4cc442c7f06d83e62be80",
+    "url": "/static/media/Karthik-2022.4b39caf8.webp"
   },
   {
     "revision": "5bd405d1f2d510905d1c18e5d9b9cfd8",
     "url": "/static/media/Karthik-compressed.5bd405d1.jpg"
-  },
-  {
-    "revision": "eaf20dfc2730383888e13af29bb95622",
-    "url": "/static/media/Karthik-compressed.eaf20dfc.webp"
-  },
-  {
-    "revision": "38fe051dab9a2a0a6ff1de9bfb767072",
-    "url": "/static/media/Karthik.38fe051d.webp"
   },
   {
     "revision": "eab66666fdd71527f956944663b6cc02",
