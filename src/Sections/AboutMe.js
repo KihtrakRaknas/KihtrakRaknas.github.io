@@ -74,14 +74,14 @@ export default class AboutMe extends React.Component {
                             </tr>
                         </Bounce>
                         <div class="vertical-spacer"/>
-                        <Bounce right>
+                        <Bounce right delay={100}>
                             <tr>
                                 <td><FontAwesomeIcon icon={faBook} size={"2x"} style={{marginRight:"10px"}}/></td>
                                 <td className="icon-text">Math & CS</td>
                             </tr>
                         </Bounce>
                         <div class="vertical-spacer"/>
-                        <Bounce right>
+                        <Bounce right delay={200}>
                             <tr>
                                 <td style={{verticalAlign:"top"}}><FontAwesomeIcon icon={faSearchLocation} size={"2x"} style={{marginRight:"10px"}}/></td>
                                 <td className="icon-text">South Brunswick - NJ<br/>College Park - MD</td>
