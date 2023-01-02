@@ -24,6 +24,6 @@
 }
 
 .profile{
-  width: max(20vw, 20vh);
+  width: max(20vw, 20vh)!important;
   height: max(20vw, 20vh);
 }
