@@ -7,34 +7,39 @@ import ReactLoading from 'react-loading';
 import Projects from './Sections/ProjectsPage';
 import AroundTheWeb from './Sections/AroundTheWeb';
 import { InView } from 'react-intersection-observer'
+import isBot from './Utilities/isBot';
+import init from 'dynamic-circuit';
 //const Projects = React.lazy(() => import('./Sections/ProjectsPage'));
 //const AroundTheWeb = React.lazy(() => import('./Sections/AroundTheWeb'));
 
-const botPattern = "(googlebot\/|bot|Googlebot-Mobile|Googlebot-Image|Google favicon|Mediapartners-Google|bingbot|slurp|java|wget|curl|Commons-HttpClient|Python-urllib|libwww|httpunit|nutch|phpcrawl|msnbot|jyxobot|FAST-WebCrawler|FAST Enterprise Crawler|biglotron|teoma|convera|seekbot|gigablast|exabot|ngbot|ia_archiver|GingerCrawler|webmon |httrack|webcrawler|grub.org|UsineNouvelleCrawler|antibot|netresearchserver|speedy|fluffy|bibnum.bnf|findlink|msrbot|panscient|yacybot|AISearchBot|IOI|ips-agent|tagoobot|MJ12bot|dotbot|woriobot|yanga|buzzbot|mlbot|yandexbot|purebot|Linguee Bot|Voyager|CyberPatrol|voilabot|baiduspider|citeseerxbot|spbot|twengabot|postrank|turnitinbot|scribdbot|page2rss|sitebot|linkdex|Adidxbot|blekkobot|ezooms|dotbot|Mail.RU_Bot|discobot|heritrix|findthatfile|europarchive.org|NerdByNature.Bot|sistrix crawler|ahrefsbot|Aboundex|domaincrawler|wbsearchbot|summify|ccbot|edisterbot|seznambot|ec2linkfinder|gslfbot|aihitbot|intelium_bot|facebookexternalhit|yeti|RetrevoPageAnalyzer|lb-spider|sogou|lssbot|careerbot|wotbox|wocbot|ichiro|DuckDuckBot|lssrocketcrawler|drupact|webcompanycrawler|acoonbot|openindexspider|gnam gnam spider|web-archive-net.com.bot|backlinkcrawler|coccoc|integromedb|content crawler spider|toplistbot|seokicks-robot|it2media-domain-crawler|ip-web-crawler.com|siteexplorer.info|elisabot|proximic|changedetection|blexbot|arabot|WeSEE:Search|niki-bot|CrystalSemanticsBot|rogerbot|360Spider|psbot|InterfaxScanBot|Lipperhey SEO Service|CC Metadata Scaper|g00g1e.net|GrapeshotCrawler|urlappendbot|brainobot|fr-crawler|binlar|SimpleCrawler|Livelapbot|Twitterbot|cXensebot|smtbot|bnf.fr_bot|A6-Indexer|ADmantX|Facebot|Twitterbot|OrangeBot|memorybot|AdvBot|MegaIndex|SemanticScholarBot|ltx71|nerdybot|xovibot|BUbiNG|Qwantify|archive.org_bot|Applebot|TweetmemeBot|crawler4j|findxbot|SemrushBot|yoozBot|lipperhey|y!j-asr|Domain Re-Animator Bot|AddThis)";
-const re = new RegExp(botPattern, 'i');
+
 
 export default class Homepage extends React.Component {
     constructor(props){
         super(props)
-        this.state = {showProjects:false, showAroundTheWeb:false}
-        if (re.test(navigator.userAgent) || true) {
-            //Projects = import('./Sections/ProjectsPage');
-            //AroundTheWeb = import('./Sections/AroundTheWeb');
-            //this.state = {showProjects:true, showAroundTheWeb:true}
-        }
-    }
-    componentWillMount(){
-        
+        this.state = {showProjects:true, showAroundTheWeb:false}
+        this.canvas = React.createRef();
+        this.canvasParent = React.createRef();
     }
     componentDidMount = () => {
         window.addEventListener('scroll', this.handleScroll)
+        setTimeout(()=>init(this.canvas.current, {
+            gridBoxSize: 50,
+            color: {r: 240, g: 240, b: 240},
+            initialNumberOfLines: 5,
+            linesPerSecond:5,
+            parent: this.canvasParent.current,
+            lengthPerSecond: 30,
+            shrink: .25
+        }), 5000);
     }
 
     handleScroll = () =>{
         if(!this.state.showAroundTheWeb && window.innerHeight*2>document.getElementById('Around-The-Web').getBoundingClientRect().top)
             this.setState({showAroundTheWeb:true})
-        if(!this.state.showProjects && window.innerHeight*2>document.getElementById('Projects').getBoundingClientRect().top)
+        if(!this.state.showProjects && window.innerHeight*2>document.getElementById('Projects').getBoundingClientRect().top){
             this.setState({showProjects:true})
+        }
     }
     render(){
         let showProjects = this.state.showProjects
@@ -42,42 +47,39 @@ export default class Homepage extends React.Component {
             showProjects = true;
         return (   
             <div>
+                {/* <DynamicCircuit/> */}
                 <Top id="Top"/>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-                    <a className="navbar-brand" href="#Top">
-                        <img src={favicon} style={{height:"100%", position:"relative", top:"-3px"}} alt="3D K spinning"></img><span>arthik's Personal Site</span>
-                    </a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div className="navbar-nav ml-auto">
-                        <a className="nav-item nav-link" href="#About-Me">About Me</a>
-                        <a className="nav-item nav-link" href="#Projects">Projects</a>
-                        <a className="nav-item nav-link" href="#Around-The-Web">Around the Web</a>
+                <nav className="navbar navbar-expand-md navbar-light bg-light sticky-top">
+                    <div class="container-fluid">
+                        <a className="navbar-brand" href="#Top">
+                            <img src={favicon} style={{height:"100%", position:"relative", top:"-2px"}} alt="3D K spinning"></img><span>arthik's Personal Site</span>
+                        </a>
+                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse flex-row-reverse" id="navbarNavAltMarkup">
+                            <div className="navbar-nav">
+                                <a className="nav-item nav-link" href="#Projects">Projects</a>
+                                <a className="nav-item nav-link" href="#Around-The-Web">Around the Web</a>
+                            </div>
                         </div>
                     </div>
                 </nav>
-                <div className="container-fluid" >
-                    {/* <h1 className="display-1 text-center">Karthik Sankar</h1>
-                    <br/>
-                    <br/> */}
-                    <div id="About-Me"><AboutMe/></div>
-                    <br/>
+                <div className="container-fluid" style={{position:"relative"}} ref={this.canvasParent}>
+                    <canvas ref={this.canvas} style={{zIndex:-1, position:"absolute", top:0, left:0, filter:"blur(3px)"}}></canvas>
                     <div id="Projects">
                         <br/><br/> {/*<Suspense fallback={<div className="contain"><h1>Loading…</h1><ReactLoading type={"bubbles"} color={"#000000"} height={'20%'} width={'20%'} className="text-center" /></div>}>
                             <Projects/>
         </Suspense>*/}
-                        <InView style={{margin:0, padding:0}} onChange={(inView, entry) => {console.log(inView); if(inView){this.setState({showProjects:true})}}} triggerOnce={true}>
-                            {this.state.showProjects || (re.test(navigator.userAgent) )?<Projects/>:<div className="contain"><button type="button" className="btn btn-lg btn-danger" onClick={()=>this.setState({showProjects:true})}>If you see this button, that means something went wrong. Click me to load the content.</button></div>}
-                        </InView>
+                        <Projects/>
                         
                     </div>
                     <br/>
+                    <hr/>
                     <div id="Around-The-Web">
                         <br/><br/> {/* <Suspense fallback={<div className="contain"><h1>Still Loading…</h1><ReactLoading type={"bubbles"} color={"#000000"} height={'20%'} width={'20%'} className="text-center" /></div>}></Suspense>*/}
                         <InView style={{margin:0, padding:0}} onChange={(inView, entry) => {console.log(inView); if(inView){this.setState({showAroundTheWeb:true})}}} triggerOnce={true}>
-                            {this.state.showAroundTheWeb || (re.test(navigator.userAgent))?<AroundTheWeb/>:<div className="contain"><button type="button" className="btn btn-lg btn-danger" onClick={()=>this.setState({showAroundTheWeb:true})}>If you see this button, that means something went wrong. Click me to load the content.</button></div>}
+                            {this.state.showAroundTheWeb || (isBot())?<AroundTheWeb/>:<div className="contain"><button type="button" className="btn btn-lg btn-danger" onClick={()=>this.setState({showAroundTheWeb:true})}>If you see this button, that means something went wrong. Click me to load the content.</button></div>}
                         </InView>
                     </div>
                     <br/><br/><br/>

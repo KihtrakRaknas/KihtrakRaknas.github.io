@@ -44,22 +44,22 @@ export default class AroundTheWeb extends React.Component {
                 <br/>
                 <div className="row">
                     <div className="col-md-4 text-center mb-4">
-                        <a href="https://www.instagram.com/kihtrakr/">
+                        <a href="https://www.instagram.com/kihtrakr/" className='text-decoration-none'>
                             <Image cloudName="kihtrak" publicId={'Instagram_AppIcon'} alt="Instagram Logo" secure="true" dpr="auto" responsive width="50"><Transformation fetchFormat="auto"/></Image>
-                            <strong className="id ml-4">@KihtrakR</strong>
+                            <strong className="id ms-4">@KihtrakR</strong>
                         </a>
                     </div>
                     <div className="col-md-4 text-center mb-4">
-                        <a href="https://github.com/kihtrakRaknas">
+                        <a href="https://github.com/kihtrakRaknas" className='text-decoration-none'>
                             <Image cloudName="kihtrak" publicId={'GitHub-Mark'} alt="GitHub Logo" secure="true" dpr="auto" responsive width="50"><Transformation fetchFormat="auto"/></Image>
-                            <strong className="id ml-4">KihtrakRaknas
+                            <strong className="id ms-4">KihtrakRaknas
                             </strong>
                         </a>
                     </div>
                     <div className="col-md-4 text-center mb-4">
-                        <a href="https://linkedin.com/in/karthik-sankar-a5a523178">
+                        <a href="https://linkedin.com/in/karthik-sankar-a5a523178" className='text-decoration-none'>
                             <Image cloudName="kihtrak" publicId={'LinkedIn_logo2'} dpr="auto" responsive width="50" alt="LinkedIn Logo" secure="true"><Transformation fetchFormat="auto"/></Image>
-                            <strong className="id ml-4">Karthik Sankar</strong>
+                            <strong className="id ms-4 text-decoration-none">Karthik Sankar</strong>
                         </a>
                     </div>
                 </div>
@@ -72,7 +72,7 @@ export default class AroundTheWeb extends React.Component {
                     </div>
                 </div> */}
                 <br/>
-                <br/>
+                <hr/>
                 <h1 id="Contact-Me" className="text-center display-4">Contact Me!</h1>
                 <br/>
                 <p className="txtAroundWeb text-center">Please don't hesitate to contact me. As long as you are a real person.</p>

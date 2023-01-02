@@ -1,5 +1,10 @@
 .icon-text{
-    font-size: 4vmin;
+    font-size: 15pt;
+    white-space: nowrap;
+}
+
+.vertical-spacer{
+    height: 20px;
 }
 
 .about-txt{

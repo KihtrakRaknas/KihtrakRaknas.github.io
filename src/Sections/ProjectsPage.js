@@ -9,7 +9,6 @@ export default class ProjectsPage extends React.Component {
         super(props);
         this.masonry = React.createRef();
         this.customSelect = React.createRef();
-        this.customSelectMobile = React.createRef();
         //this.masonry.current.updateFilter()
         this.state = {
             reverseSort:false,
@@ -19,18 +18,23 @@ export default class ProjectsPage extends React.Component {
       }
 
       sortBtns = ()=>{
-            return(                        
-            <div className="btn-group btn-group-toggle mt-2" data-toggle="buttons">
-                <label className="btn btn-secondary active" onClick={()=>{this.masonry.current.setSort("original-order",this.state.reverseSort)}}>
-                    <input type="radio" name="options" id="option1" autoComplete="off" defaultChecked/> Default
-                </label>
-                <label className="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("start",this.state.reverseSort)}}>
-                    <input type="radio" name="options" id="option2" autoComplete="off"/> Date Created
-                </label>
-                <label className="btn btn-secondary" onClick={()=>{this.masonry.current.setSort("end",this.state.reverseSort)}}>
-                    <input type="radio" name="options" id="option3" autoComplete="off"/> Date Finished
-                </label>
-            </div>
+            return(
+                <div className="btn-group mt-2" role="group">
+                    <input type="radio" class="btn-check" name="options" id="option1" autoComplete="off" defaultChecked/>
+                    <label className="btn btn-outline-info" for="option1" onClick={()=>{this.masonry.current.setSort("original-order",this.state.reverseSort)}}>
+                        Default
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options" id="option2" autoComplete="off"/>
+                    <label className="btn btn-outline-info" for="option2" onClick={()=>{this.masonry.current.setSort("start",this.state.reverseSort)}}>
+                        Date Created
+                    </label>
+
+                    <input type="radio" class="btn-check" name="options" id="option3" autoComplete="off"/>
+                    <label className="btn btn-outline-info" for="option3" onClick={()=>{this.masonry.current.setSort("end",this.state.reverseSort)}}>
+                        Date Finished
+                    </label>
+                </div>
             )
       }
 
@@ -56,7 +60,6 @@ export default class ProjectsPage extends React.Component {
             for(let tag of this.tags)
                 searchOptions.push({value:tag,label:tag});
             this.customSelect.current.updateSearchOptions(searchOptions)
-            this.customSelectMobile.current.updateSearchOptions(searchOptions)
             console.log("------------------------------------")
             console.log(searchOptions)
         }
@@ -68,21 +71,16 @@ console.log(this.tags)
             <div>
                 <h1 className="text-center display-2">Projects</h1>
                 <br/>
-                <div className="d-none d-md-block">
-                    <div className="form-row">
-                        <div className="col-6">
-                            {this.sortBtns()}
-                        </div>
-                        <div className="col-6">
-                            {<CustomSelect ref={this.customSelect} filterSelected={this.filterSelected.bind(this)}/>}
-                        </div>
-                    </div>
-                </div>
                 <div className="d-md-none text-center">
                     <button type="button" className="btn btn-outline-info" style={{display:this.state.showMobileBtns?"none":"inline-block"}} onClick={()=>this.setState({showMobileBtns:true})}>Sort/Filter</button>
-                    <div style={{display:this.state.showMobileBtns?"block":"none"}}>
+                </div>
+                <div className={`d-${this.state.showMobileBtns?"block":"none"} d-md-block`}>
+                    <div className="d-flex flex-column flex-md-row">
                         {this.sortBtns()}
-                        {<CustomSelect ref={this.customSelectMobile} filterSelected={this.filterSelected.bind(this)}/>}   
+                        <div className='mx-3 d-none d-md-block'></div>
+                        <div className="flex-grow-1">
+                            {<CustomSelect ref={this.customSelect} filterSelected={this.filterSelected.bind(this)}/>}
+                        </div>
                     </div>
                 </div>
                 <br/>

@@ -10,24 +10,20 @@ import Slide from 'react-reveal/Slide';
 export default class AboutMe extends React.Component {
     constructor(){
         super();
-        var vmin = window.innerHeight
-        if(window.innerWidth<vmin)
-            vmin = window.innerWidth
         this.state = {
-            vmin:  vmin
+            vmax: this.getMin()
         }
-
     }
 
     getMin() {
-        if(window.innerWidth<window.innerHeight)
+        if(window.innerWidth>window.innerHeight)
             return window.innerWidth
         return window.innerHeight
     }
 
     updateDimensions() {
         var min = this.getMin()
-            this.setState({ vmin: min });
+        this.setState({ vmax: min });
     }
 
 
@@ -41,62 +37,57 @@ export default class AboutMe extends React.Component {
     }
 
     render(){
+        console.log(Math.round(this.state.vmax/350))
         return(
-            <div>
-                <br/>
-                <Bounce bottom>
-                    <h1 className="text-center display-2">About Me</h1>
-                </Bounce>
-                <Jump>
-                <br/>
-                </Jump>
-                <div className="row" style={{overflowX:'hidden'}}>
-                    <div className="col-md-6 px-4 px-sm-5">
-                        <table>
-                            <Zoom left>
-                                <tr>
-                                    <td><FontAwesomeIcon icon={faSearchLocation} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/></td>
-                                    <td className="icon-text">New Jersey (South Brunswick)</td>
-                                </tr>
-                                <br/>
-                                <tr>
-                                    <td><FontAwesomeIcon icon={faSchool} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/></td>
-                                    <td className="icon-text">University Of Maryland - College Park</td>
-                                </tr>
-                                <br/>
-                                <tr>
-                                    <td><FontAwesomeIcon icon={faBook} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/></td>
-                                    <td className="icon-text">    Math and Computer Science Major</td>
-                                </tr>
-                            </Zoom>
-                        </table>
-                        <br/>
-                    </div>
-                    
-                    <div className="col-md-6 px-4 px-sm-5">
-                        <table>
-                            <Slide right >
-                                    <tr>
-                                        <td><FontAwesomeIcon icon={faBriefcase} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/></td>
-                                        <td className="icon-text">Full Time Student</td>
-                                    </tr>
-                                    <br/>
-                                    <tr>
-                                        <td><FontAwesomeIcon icon={faRobot} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/></td>
-                                        <td className="icon-text">Maker</td>
-                                    </tr>
-                                    <br/>
-                                    <tr>
-                                        <td><FontAwesomeIcon icon={faLaptopCode} size={Math.round(this.state.vmin/350)+"x"} style={{marginRight:"10px"}}/></td>
-                                        <td className="icon-text">Full-stack developer</td>
-                                    </tr>
-                            </Slide>
-                        </table>
-                        <br/>
-                    </div>
+            <div className="row" style={{overflow:'hidden'}}>
+                <div className="col-md-6 position-relative">
+                    <table>
+                        <Bounce left>
+                            <tr>
+                                <td><FontAwesomeIcon icon={faBriefcase} size={"2x"} style={{marginRight:"10px"}}/></td>
+                                <td className="icon-text">Student</td>
+                            </tr>
+                        </Bounce>
+                        <div class="vertical-spacer"/>
+                        <Bounce left delay={100}>
+                            <tr>
+                                <td><FontAwesomeIcon icon={faRobot} size={"2x"} style={{marginRight:"10px"}}/></td>
+                                <td className="icon-text">Maker</td>
+                            </tr>
+                        </Bounce>
+                        <div class="vertical-spacer"/>
+                        <Bounce left delay={200}>
+                            <tr>
+                                <td><FontAwesomeIcon icon={faLaptopCode} size={"2x"} style={{marginRight:"10px"}}/></td>
+                                <td className="icon-text">Full-stack developer</td>
+                            </tr>
+                        </Bounce>
+                    </table>
+                    <div class="vertical-spacer"/>
                 </div>
-                <div>
-
+                <div className="col-md-6 position-relative">
+                    <table>
+                        <Bounce right>
+                            <tr>
+                                <td><FontAwesomeIcon icon={faSchool} size={"2x"} style={{marginRight:"10px"}}/></td>
+                                <td className="icon-text">UMD</td>
+                            </tr>
+                        </Bounce>
+                        <div class="vertical-spacer"/>
+                        <Bounce right>
+                            <tr>
+                                <td><FontAwesomeIcon icon={faBook} size={"2x"} style={{marginRight:"10px"}}/></td>
+                                <td className="icon-text">Math & CS</td>
+                            </tr>
+                        </Bounce>
+                        <div class="vertical-spacer"/>
+                        <Bounce right>
+                            <tr>
+                                <td style={{verticalAlign:"top"}}><FontAwesomeIcon icon={faSearchLocation} size={"2x"} style={{marginRight:"10px"}}/></td>
+                                <td className="icon-text">South Brunswick - NJ<br/>College Park - MD</td>
+                            </tr>
+                        </Bounce>
+                    </table>
                 </div>
             </div>
         );
