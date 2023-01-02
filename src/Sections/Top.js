@@ -45,7 +45,7 @@ export default class Top extends React.Component {
                 <canvas ref={this.canvas} style={{zIndex:-1, position:"absolute", top:0, left:0}}></canvas>
                 <Parallax speed={-3}>
                     <div class="d-flex flex-row justify-content-center row">
-                        <img src={require('../Imgs/Karthik-headshot-2022.png')} alt="A profile picture of Karthik Sankar" className='rounded-circle profile' style={{padding:0}}/>
+                        <img src={require('../Imgs/Karthik-headshot-2022-256.webp')} alt="A profile picture of Karthik Sankar" className='rounded-circle profile' style={{padding:0}}/>
                         <div className="p-4 mx-md-5 mx-1 mt-md-1 mt-3" style={{backgroundColor: "#F9F9F9F9", borderRadius: 20, height:"fit-content", boxShadow:"gray 3px 3px 10px", width:"fit-content"}}>
                             <h1 class="display-1 text-center" style={{fontFamily:"Kanit"}}>
                                 <p style={{visibility:'hidden', height:0, margin:0}}>Karthik Sankar|</p>

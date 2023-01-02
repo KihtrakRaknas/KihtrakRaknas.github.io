@@ -2,7 +2,7 @@ import React from 'react';
 import ProjectCard from './Components/ProjectCard'
 export const Projects = [
     <ProjectCard 
-        img={require('./Imgs/gradeView.PNG')} 
+        img={require('./Imgs/ProjectImgs/gradeView.webp')} 
         cloudImg="gradeView"
         title="GradeView - iOS and Android App"
         description={`An app that provides students with access to their grades, provides notifications when new grades go up, calculates GPA and much more! \nCurrently has over 1000 active users and supports over 3 school districts.`} 
@@ -17,7 +17,7 @@ export const Projects = [
         key="GradeView - iOS and Android App"
     />,
     <ProjectCard 
-        img={require('./Imgs/NotiBot.png')} 
+        img={require('./Imgs/ProjectImgs/NotiBot.webp')} 
         cloudImg="NotiBot"
         title="NotiBot - iOS/Android/Web App"
         description={`An app that allows developers to use it's easy-to-use API to send themselves notifications about anything. Complete with API documentation and code examples.`} 
@@ -33,7 +33,7 @@ export const Projects = [
     />,
     <ProjectCard 
         title="Scoutr - A Robotics Scouting Tool" 
-        img={require('./Imgs/scoutr.PNG')} 
+        img={require('./Imgs/ProjectImgs/scoutr.webp')} 
         cloudImg="scoutr"
         description={`A mobile-first tool for robotics competitions. Simply enter your name and team number. The app will automatically find the competitions you are signed up for and display them. It will show you all the teams at the competition, and allow you to take notes and sync them accross your team member's devices. The app will also retrive other useful information like a team's "skills" score and past awards. All the data gets saved offline incase the internet at a competition is spotty.`} 
         project="https://kihtrak.com/scoutr/"
@@ -47,7 +47,7 @@ export const Projects = [
     />,
     <ProjectCard 
         title="Space Shooter - Star Fox Style VR Game" 
-        img={require('./Imgs/starFox.PNG')} 
+        img={require('./Imgs/ProjectImgs/starFox.webp')} 
         cloudImg="starFox"
         firstMonth="January"
         firstYear="2020"
@@ -64,7 +64,7 @@ export const Projects = [
     <ProjectCard 
         title="Mr. Poot"
         RepoName="Mr.-Poot-App"
-        img={require('./Imgs/mrPoot.png')}
+        img={require('./Imgs/ProjectImgs/mrPoot.webp')}
         cloudImg="mrPoot"
         description="An app for a chemistry teacher at SBHS. It contains chemistry notes, pictures and videos. (Commissioned by Mr. Poot himself)"
         firstMonth="November"
@@ -81,7 +81,7 @@ export const Projects = [
         key="Mr. Poot"
     />,
     <ProjectCard
-        img={require('./Imgs/NHSStaffFeedback.png')} 
+        img={require('./Imgs/ProjectImgs/NHSStaffFeedback.webp')} 
         cloudImg="NHSStaffFeedback"
         title="NHS Staff Feedback Form"
         description="A website commissioned by my school's National Honors Society to get feedback about students who are applying. Signing into the site will require a @sbschools.org email (to prove you are a staff member)." 
@@ -98,7 +98,7 @@ export const Projects = [
     />,
     <ProjectCard
         title="REDirector"
-        img={require('./Imgs/red.PNG')} 
+        img={require('./Imgs/ProjectImgs/red.webp')} 
         cloudImg="red"
         RepoName="RED" 
         project="https://red.kihtrak.com"
@@ -111,7 +111,7 @@ export const Projects = [
     />,
     <ProjectCard
         title="Potato Co."
-        img={require('./Imgs/potatoes.png')} 
+        img={require('./Imgs/ProjectImgs/potatoes.webp')} 
         cloudImg="potatoes"
         RepoName="Potato-co" 
         project="https://potato.kihtrak.com/" 
@@ -121,7 +121,7 @@ export const Projects = [
     />,
     /*<ProjectCard 
         title="Old Homepage"
-        img={require('./Imgs/old.PNG')} 
+        img={require('./Imgs/ProjectImgs/old.webp')} 
         cloudImg="old"
         description="One of my first experiences with HTML and CSS. It has been mildly vandalized and updated with hyperlinks to help web crawlers."
         RepoName="Old-Homepage"
@@ -136,7 +136,7 @@ export const Projects = [
     />,*/
     <ProjectCard 
         title="Quick Set Up"
-        img={require('./Imgs/setup.PNG')} 
+        img={require('./Imgs/ProjectImgs/setup.webp')} 
         cloudImg="setup"
         RepoName="setup"
         project="https://setup.kihtrak.com/"
@@ -145,7 +145,7 @@ export const Projects = [
     />,
     <ProjectCard 
         title="A Lack Of Clarity"
-        img={require('./Imgs/aLackOfClarity.PNG')} 
+        img={require('./Imgs/ProjectImgs/aLackOfClarity.webp')} 
         cloudImg="aLackOfClarity"
         RepoName="clarity"
         description="A blog where talented teen writers share original works. This projected started as a fun quarantine challenge but it has become a large library of high quality works."
@@ -159,7 +159,7 @@ export const Projects = [
     />,
     <ProjectCard 
         title="POPs Informational Website"
-        img={require('./Imgs/POPs.PNG')} 
+        img={require('./Imgs/ProjectImgs/POPs.webp')} 
         cloudImg="POPs"
         RepoName="POPs"
         description="POPs are Persistent Organic Pollutants. I was given the responsibily to design a website about POPs as head programmer for the NJIT Chemistry Olympics. The site has some cool custom react components and custom animations."
@@ -174,7 +174,7 @@ export const Projects = [
     />,
     <ProjectCard 
         title="cloud_variable"
-        //img={require('./Imgs/setup.PNG')} 
+        //img={require('./Imgs/ProjectImgs/setup.webp')} 
         //cloudImg="setup"
         RepoName="cloud_variable"
         project="https://kihtrak.com/cloud_variable/"
@@ -191,7 +191,7 @@ export const Projects = [
     <ProjectCard 
         title="Basic Calculator"
         RepoName="Calculator"
-        img={require('./Imgs/calculator.png')}
+        img={require('./Imgs/ProjectImgs/calculator.webp')}
         cloudImg="calculator"
         code="https://github.com/KihtrakRaknas/Calculator"
         androidDownload="https://play.google.com/store/apps/details?id=com.kihtrak.calculator"
@@ -208,7 +208,7 @@ export const Projects = [
         title="3D Shooter"
         project="https://kihtrak.com/3d-shooter"
         RepoName="3d-shooter"
-        img={require('./Imgs/3dShooter.png')}
+        img={require('./Imgs/ProjectImgs/3dShooter.webp')}
         cloudImg="3dShooter"
         languages={["JavaScript","HTML","CSS","THREE.js"]}
         types={["Website"]}
@@ -216,7 +216,7 @@ export const Projects = [
     />,
     <ProjectCard
         title="750S Team Website"
-        img={require('./Imgs/750SSite.png')}
+        img={require('./Imgs/ProjectImgs/750SSite.webp')}
         cloudImg="750SSite"
         description="A Website for my high school's robotics team. Complete with team bios and a team-only attendance system."
         project="https://750s.github.io/"
@@ -231,7 +231,7 @@ export const Projects = [
         key="750S Team Website"
     />,
     <ProjectCard
-        img={require('./Imgs/ninjaEvaluation.PNG')} 
+        img={require('./Imgs/ProjectImgs/ninjaEvaluation.webp')} 
         cloudImg="ninjaEvaluation"
         title="Ninja Evaluator"
         RepoName="Ninja-Evaluation"
@@ -249,7 +249,7 @@ export const Projects = [
     />,
     <ProjectCard 
         title="Cannon Demo" 
-        img={require('./Imgs/cannon.PNG')} 
+        img={require('./Imgs/ProjectImgs/cannon.webp')} 
         cloudImg="cannon"
         firstMonth="October"
         firstYear="2019"
@@ -264,7 +264,7 @@ export const Projects = [
         types={["PC Program"]}
     />,
     <ProjectCard
-        img={require('./Imgs/oldRoboticsPortfolio.PNG')} 
+        img={require('./Imgs/ProjectImgs/oldRoboticsPortfolio.webp')} 
         cloudImg="oldRoboticsPortfolio"
         title="Robotic's Portfolio from Sophomore year"
         description="My old Robotic's Portfolio from Sophomore year. It features some of the highlights of the code I wrote that season. There is a little easter egg if you have my friend's portfolio open at the same time as mine (which is why firebase was used)." 
@@ -281,7 +281,7 @@ export const Projects = [
         key="oldRoboticsPortfolio"
     />,
     <ProjectCard
-        img={require('./Imgs/newRoboticsPortfolio.png')} 
+        img={require('./Imgs/ProjectImgs/newRoboticsPortfolio.webp')} 
         cloudImg="newRoboticsPortfolio"
         title="Robotics Portfolio from Junior year"
         description="My old Robotics Portfolio from Sophomore year. It features some of the highlights of the code I wrote that season. There is a little easter egg if you have my friend's portfolio open at the same time as mine (which is why firebase was used)." 
@@ -297,7 +297,7 @@ export const Projects = [
         key="newRoboticsPortfolio"
     />,
     <ProjectCard
-        //img={require('./Imgs/newRoboticsPortfolio.png')} 
+        //img={require('./Imgs/ProjectImgs/newRoboticsPortfolio.webp')} 
         title="Sophomore Year Robot Code"
         description="As the co-head programmer for my robotics team, I wrote and maintained most of the code for the robot. The code was written for the Purdue Robotics Operating System (PROS)" 
         RepoName="2017-2018-Robotics-Code"
@@ -312,7 +312,7 @@ export const Projects = [
         key="Sophomore Year Robot Code"
     />,
     <ProjectCard
-        //img={require('./Imgs/newRoboticsPortfolio.png')} 
+        //img={require('./Imgs/ProjectImgs/newRoboticsPortfolio.webp')} 
         title="Junior Year Robot Code"
         description="As the head programmer and captain for my robotics team, I wrote and maintained most of the code for the robot. This year, the V5 brain (microcontroller) had just been released so we had no choice but to use the IDE provided by Vex." 
         firstMonth="January"
@@ -326,7 +326,7 @@ export const Projects = [
         key="Junior Year Robot Code"
     />,
     <ProjectCard
-        //img={require('./Imgs/newRoboticsPortfolio.png')} 
+        //img={require('./Imgs/ProjectImgs/newRoboticsPortfolio.webp')} 
         title="Senior Year Robot Code"
         description="As the head programmer and captain for my robotics team, I wrote and maintained most of the code for the robot. The code was written for the Purdue Robotics Operating System (PROS)" 
         RepoName="Tower-Takeover-X-Drive"
@@ -341,13 +341,13 @@ export const Projects = [
         RepoName="3D-Maze"
         description={`A maze created with Java and the swing library. Uses "fake 3D" like Doom.`}
         project="https://github.com/KihtrakRaknas/3D-Maze/archive/master.zip"
-        img={require('./Imgs/maze.png')}
+        img={require('./Imgs/ProjectImgs/maze.webp')}
         cloudImg="maze"
         languages={["Java"]}
         key="3D-Maze"
     />,
     <ProjectCard
-        img={require('./Imgs/myAwesomeStudio.png')} 
+        img={require('./Imgs/ProjectImgs/myAwesomeStudio.webp')} 
         cloudImg="myAwesomeStudio"
         title="Scratch Projects"
         description="Around middle school, I got super into making Scratch projects. This is a collection of every project I've published on Scratch" 
@@ -360,7 +360,7 @@ export const Projects = [
         key="myAwesomeStudio"
     />,
     <ProjectCard
-        img={require('./Imgs/ActualTrash.png')} 
+        img={require('./Imgs/ProjectImgs/ActualTrash.webp')} 
         cloudImg="ActualTrash"
         title={`"Actual Trash"`}
         firstMonth="May"
@@ -375,7 +375,7 @@ export const Projects = [
         key="ActualTrash"
     />,
     <ProjectCard
-        img={require('./Imgs/multiPong.jpg')} 
+        img={require('./Imgs/ProjectImgs/multiPong.webp')} 
         cloudImg="multiPong"
         title="MultiPong"
         RepoName="MultiPong"
@@ -393,7 +393,7 @@ export const Projects = [
         key="multiPong"
     />,
     <ProjectCard
-        img={require('./Imgs/smartBottle.jpeg')} 
+        img={require('./Imgs/ProjectImgs/smartBottle.webp')} 
         cloudImg="smartBottle"
         title="Smart Bottle"
         RepoName="SmartBottleApp"
@@ -410,7 +410,7 @@ export const Projects = [
         key="Smart Bottle"
     />,
     <ProjectCard
-        img={require('./Imgs/TubeCreation.png')} 
+        img={require('./Imgs/ProjectImgs/TubeCreation.webp')} 
         cloudImg="TubeCreation"
         title="3D Printed Tube"
         firstMonth="August"
@@ -423,7 +423,7 @@ export const Projects = [
         key="TubeCreation"
     />,
     <ProjectCard
-        img={require('./Imgs/goldbelt.PNG')} 
+        img={require('./Imgs/ProjectImgs/goldbelt.webp')} 
         cloudImg="goldbelt"
         title="Goldbelt"
         firstMonth="April"
@@ -439,7 +439,7 @@ export const Projects = [
         key="goldbelt"
     />,
     <ProjectCard
-        img={require('./Imgs/ninjaBucks.PNG')} 
+        img={require('./Imgs/ProjectImgs/ninjaBucks.webp')} 
         cloudImg="ninjaBucks"
         title="NinjaBucks"
         RepoName="NinjaBucks"
@@ -458,7 +458,7 @@ export const Projects = [
     />,
     <ProjectCard 
         title="Top Down Shooter" 
-        img={require('./Imgs/topDownShooter.PNG')} 
+        img={require('./Imgs/ProjectImgs/topDownShooter.webp')} 
         cloudImg="topDownShooter"
         firstMonth="November"
         firstYear="2019"
@@ -474,7 +474,7 @@ export const Projects = [
     />,
     <ProjectCard 
         title="Kihtrak.com" 
-        img={require('./Imgs/Karthik-compressed.jpg')} 
+        img={require('./Imgs/ProjectImgs/Karthik-compressed.webp')} 
         cloudImg="Karthik-small"
         description="A compilation of my projects! The website you are viewing right now" 
         project="https://kihtrak.com"
@@ -488,7 +488,7 @@ export const Projects = [
 ];
 /*
     <ProjectCard
-        img={require('./Imgs/Karthik-compressed.jpg')} 
+        img={require('./Imgs/ProjectImgs/Karthik-compressed.webp')} 
         title="GradeView - iOS and Android App"
         description="A compilation of my projects! The website you are viewing right now" 
         RepoName="GradeViewApp"
