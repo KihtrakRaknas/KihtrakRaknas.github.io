@@ -45,7 +45,7 @@ export default class AboutMe extends React.Component {
                         <Bounce left>
                             <tr>
                                 <td><FontAwesomeIcon icon={faBriefcase} size={"2x"} style={{marginRight:"10px"}}/></td>
-                                <td className="icon-text">Student</td>
+                                <td className="icon-text">Software Engineer</td>
                             </tr>
                         </Bounce>
                         <div class="vertical-spacer"/>
@@ -70,7 +70,7 @@ export default class AboutMe extends React.Component {
                         <Bounce right>
                             <tr>
                                 <td><FontAwesomeIcon icon={faSchool} size={"2x"} style={{marginRight:"10px"}}/></td>
-                                <td className="icon-text">UMD</td>
+                                <td className="icon-text">UMD Alum</td>
                             </tr>
                         </Bounce>
                         <div class="vertical-spacer"/>
@@ -84,7 +84,7 @@ export default class AboutMe extends React.Component {
                         <Bounce right delay={200}>
                             <tr>
                                 <td style={{verticalAlign:"top"}}><FontAwesomeIcon icon={faSearchLocation} size={"2x"} style={{marginRight:"10px"}}/></td>
-                                <td className="icon-text">South Brunswick - NJ<br/>College Park - MD</td>
+                                <td className="icon-text">South Brunswick - NJ<br/>Northern Virginia</td>
                             </tr>
                         </Bounce>
                     </table>
